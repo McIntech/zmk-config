@@ -7,18 +7,22 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Layer 0";
-            // 3 filas x 12 + 6 thumbs = 42 posiciones
             bindings = <
                 // fila 1
-                &kp A   &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+                &mt LCTRL A  &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
                 // fila 2
-                &trans  &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+                &trans       &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
                 // fila 3
-                &trans  &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
-                // thumbs (3 izq | 3 der)
-                &trans  &trans &trans                      &trans &trans &trans
+                &trans       &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+                // thumbs
+                &trans &trans &trans                        &trans &trans &trans
             >;
         };
+    };
+
+    &mt {
+        tapping-term-ms = <200>;
+        quick_tap_ms = <150>;
+        flavor = "tap-preferred";
     };
 };
