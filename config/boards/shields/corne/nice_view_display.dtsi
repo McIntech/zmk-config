@@ -1,0 +1,38 @@
+/ {
+    displays {
+        compatible = "zmk,display";
+
+        status_screen {
+            compatible = "zmk,status-screen";
+            label = "Nice!View Status";
+
+            widgets = <
+                &battery_widget
+                &output_status_widget
+                &layer_status_widget
+                &logo_widget
+            >;
+        };
+
+        battery_widget: battery_widget {
+            compatible = "zmk,battery-widget";
+            label = "Battery";
+        };
+
+        output_status_widget: output_status_widget {
+            compatible = "zmk,output-status-widget";
+            label = "BLE";
+        };
+
+        layer_status_widget: layer_status_widget {
+            compatible = "zmk,layer-status-widget";
+            label = "Layer";
+        };
+
+        logo_widget: logo_widget {
+            compatible = "zmk,image-widget";
+            label = "Logo";
+            file = "logo-mountain.bin";
+        };
+    };
+};
