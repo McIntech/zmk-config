@@ -5,7 +5,7 @@
 /* Ajuste global del &mt por defecto */
 &mt {
     tapping-term-ms = <200>;
-    quick_tap_ms = <150>;
+    quick-tap-ms = <150>;
     flavor = "tap-preferred";
 };
 
@@ -13,28 +13,31 @@
  / {
     behaviors {
         mt_hp: mt_hp {
-            compatible = "zmk,behavior-mod-tap";
-            #binding-cells = <2>;      /* <MOD KEY> */
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
+            quick-tap-ms = <0>;
         };
 
         mt_rel: mt_rel {
-            compatible = "zmk,behavior-mod-tap";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <150>;
+            quick-tap-ms = <150>;
             hold-trigger-on-release;
         };
 
         mt_long: mt_long {
-            compatible = "zmk,behavior-mod-tap";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
-            quick_tap_ms = <200>;
+            quick-tap-ms = <200>;
         };
     };
 
