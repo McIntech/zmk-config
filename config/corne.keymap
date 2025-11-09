@@ -5,7 +5,7 @@
 /* Opcional: ajustar el &mt global si quieres */
 &mt {
     tapping-term-ms = <200>;
-    quick_tap_ms = <150>;
+    require-prior-idle-ms = <150>;
     flavor = "tap-preferred";
 };
 
@@ -17,7 +17,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <150>;
+            require-prior-idle-ms = <150>;
         };
 
         mt_hold: mt_hold {
@@ -25,7 +25,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
+            require-prior-idle-ms = <0>;
         };
 
         mt_rel: mt_rel {
@@ -33,7 +33,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <120>;
+            require-prior-idle-ms = <120>;
             hold-trigger-on-release;
         };
 
@@ -42,7 +42,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
-            quick_tap_ms = <200>;
+            require-prior-idle-ms = <200>;
         };
 
         mt_quick0: mt_quick0 {
@@ -50,7 +50,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
+            require-prior-idle-ms = <0>;
         };
 
         mt_short: mt_short {
@@ -58,7 +58,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
-            quick_tap_ms = <100>;
+            require-prior-idle-ms = <100>;
         };
     };
 
