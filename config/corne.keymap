@@ -2,27 +2,163 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/* Ajustes Mod-Tap (esto va fuera de keymap) */
-&mt {
-  tapping-term-ms = <200>;
-  quick_tap_ms = <150>;
-  flavor = "tap-preferred";
+/* ====== Mod-Tap variantes para pruebas (cada una con su timing/flavor) ====== */
+&{ // bloque raíz implícito
+
+    behaviors {
+
+        /* 1) Tap-preferred, ventana corta de quick tap */
+        mt_tp: mt_tp {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_TAP_PREF";
+            #binding-cells = <2>;            // <MOD KEY>
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        /* 2) Hold-preferred, más “pegado” al hold */
+        mt_hp: mt_hp {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_HOLD_PREF";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+        };
+
+        /* 3) Balanced, término medio */
+        mt_bal: mt_bal {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_BALANCED";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+        };
+
+        /* 4) Hold dispara al soltar si se excede ventana (reduce falsos holds) */
+        mt_rel: mt_rel {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_RELEASE_HOLD";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;         // boolean
+        };
+
+        /* 5) Tap-preferred con ventana más larga de tap rápido */
+        mt_tp_long: mt_tp_long {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_TAP_PREF_LONG";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        /* 6) Hold-preferred con tapping term corto */
+        mt_hp_short: mt_hp_short {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_HOLD_PREF_SHORT";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+        };
+
+        /* 7) Balanced con tapping term largo */
+        mt_bal_long: mt_bal_long {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_BAL_LONG";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+        };
+
+        /* 8) Tap-preferred sin quick-tap */
+        mt_tp_noqt: mt_tp_noqt {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_TAP_NOQT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+
+        /* 9) Hold-preferred con release trigger */
+        mt_hp_rel: mt_hp_rel {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_HOLD_REL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
+        };
+
+        /* 10) Tap-preferred muy permisivo */
+        mt_tp_loose: mt_tp_loose {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_TAP_LOOSE";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+        };
+
+        /* 11) Balanced sin quick-tap */
+        mt_bal_noqt: mt_bal_noqt {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_BAL_NOQT";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+        };
+
+        /* 12) Tap-preferred, tapping term corto y release trigger */
+        mt_tp_short_rel: mt_tp_short_rel {
+            compatible = "zmk,behavior-mod-tap";
+            label = "MT_TAP_SHORT_REL";
+            #binding-cells = <2>;
+            tapping-term-ms = <130>;
+            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;
+        };
+    };
 };
 
+/* =============================== Keymap =============================== */
  / {
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
+      display-name = "L0-DIAG-CTRL-A";
       bindings = <
-        /* Fila 1 */
-        &mt LCTRL A   &kp Q     &kp W     &kp E     &kp R     &kp T      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-        /* Fila 2 */
-        &kp LCTRL     &kp A     &kp S     &kp D     &kp F     &kp G      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-        /* Fila 3 */
-        &kp LSHFT     &kp Z     &kp X     &kp C     &kp V     &kp B      &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp ESC
-        /* Pulgares */
-                        &kp LGUI  &mo 1    &kp SPACE           &kp RET    &mo 2     &kp RALT
+        /* ------------ FILA SUPERIOR (izq = 6 pruebas, der = normal) ------------ */
+        &mt_tp       LCTRL A   &mt_hp       LCTRL A   &mt_bal      LCTRL A
+        &mt_rel      LCTRL A   &mt_tp_long  LCTRL A   &mt_hp_short LCTRL A
+        /* derecha normal */
+        &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC
+
+        /* ------------- FILA HOME (izq = 6 pruebas, der = normal) --------------- */
+        &mt_bal_long LCTRL A   &mt_tp_noqt  LCTRL A   &mt_hp_rel   LCTRL A
+        &mt_tp_loose LCTRL A   &mt_bal_noqt LCTRL A   &mt_tp_short_rel LCTRL A
+        /* derecha normal */
+        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
+
+        /* ------------- FILA INFERIOR (izq = 6 pruebas, der = normal) ----------- */
+        &kp Z         &kp X         &kp C         &kp V         &kp B         &kp G
+        /* derecha normal */
+        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+
+        /* ---------------------------- PULGARES ---------------------------------- */
+                     &kp LGUI   &mo 1   &kp SPACE            &kp RET   &mo 2   &kp RALT
       >;
     };
   };
