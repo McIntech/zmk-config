@@ -4,14 +4,10 @@
 
         default_layer {
             bindings = <
-                // Fila 1 (6 teclas)
-                &kp A   &none   &none   &none   &none   &none
-                // Fila 2
-                &none   &none   &none   &none   &none   &none
-                // Fila 3
-                &none   &none   &none   &none   &none   &none
-                // Pulgares
-                &none   &none   &none   &none   &none   &none
+                &kp A  &none  &none  &none  &none  &none
+                &none  &none  &none  &none  &none  &none
+                &none  &none  &none  &none  &none  &none
+                &none  &none  &none  &none  &none  &none
             >;
         };
     };
