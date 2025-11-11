@@ -22,10 +22,6 @@
     behaviors {
     };
 
-    &uc {
-        default-mode = <UC_MODE_MACOS>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -80,4 +76,8 @@
             >;
         };
     };
+};
+
+&uc {
+    default-mode = <UC_MODE_MACOS>;
 };
