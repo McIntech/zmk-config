@@ -14,7 +14,9 @@
         spotlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&macro_press &kp LGUI>
+                     , <&macro_tap &kp SPACE>
+                     , <&macro_release &kp LGUI>;
         };
 
         macro_a_accent: macro_a_accent {
