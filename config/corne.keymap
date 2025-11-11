@@ -15,43 +15,79 @@
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
         };
+
+        macro_enye: macro_enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp N>;
+        };
+
+        macro_a_accent: macro_a_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp A>;
+        };
+
+        macro_e_accent: macro_e_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp E>;
+        };
+
+        macro_i_accent: macro_i_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp I>;
+        };
+
+        macro_o_accent: macro_o_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp O>;
+        };
+
+        macro_u_accent: macro_u_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp U>;
+        };
     };
 
     behaviors {
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(N)>;
+            bindings = <&macro_enye>;
         };
 
         a_accent: a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(A)>;
+            bindings = <&macro_a_accent>;
         };
 
         e_accent: e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(E)>;
+            bindings = <&macro_e_accent>;
         };
 
         i_accent: i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(I)>;
+            bindings = <&macro_i_accent>;
         };
 
         o_accent: o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(O)>;
+            bindings = <&macro_o_accent>;
         };
 
         u_accent: u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(U)>;
+            bindings = <&macro_u_accent>;
         };
     };
 
