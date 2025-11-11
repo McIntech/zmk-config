@@ -27,40 +27,40 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp E>, <&kp A>;
-            wait-ms = <30>;
+            bindings = <&kp LALT E>, <&kp A>;
+            wait-ms = <50>;
             tap-ms = <40>;
         };
 
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp E>, <&kp E>;
-            wait-ms = <30>;
+            bindings = <&kp LALT E>, <&kp E>;
+            wait-ms = <50>;
             tap-ms = <40>;
         };
 
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp E>, <&kp I>;
-            wait-ms = <30>;
+            bindings = <&kp LALT I>, <&kp I>;
+            wait-ms = <50>;
             tap-ms = <40>;
         };
 
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp E>, <&kp O>;
-            wait-ms = <30>;
+            bindings = <&kp LALT O>, <&kp O>;
+            wait-ms = <50>;
             tap-ms = <40>;
         };
 
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp E>, <&kp U>;
-            wait-ms = <30>;
+            bindings = <&kp LALT U>, <&kp U>;
+            wait-ms = <50>;
             tap-ms = <40>;
         };
     };
