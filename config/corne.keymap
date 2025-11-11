@@ -126,7 +126,33 @@
             tap-ms = <1>;
         };
 
-        macro_enye: macro_enye {
+        accent_dead: accent_dead {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+            >;
+            wait-ms = <10>;
+            tap-ms = <10>;
+        };
+
+        // tecla ñ
+        ene_letter: ene_letter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp N
+                &macro_release &kp LALT
+                &macro_tap &kp N
+            >;
+            wait-ms = <10>;
+            tap-ms = <10>;
+        };
+
+        enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -139,8 +165,8 @@
                 &macro_tap
                 &kp N
             >;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
     };
 
@@ -188,42 +214,49 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-                &kp TAB
+                // ----------  Fila 1 ----------
+                &kp ESC
                 &kp H
                 &kp G
                 &kp M
                 &kp U
-                &o_accent
-                &i_accent
+                &accent_dead // tecla ´ (acento agudo)
+                &kp EQUAL
                 &kp D
                 &kp V
                 &kp P
                 &kp Q
                 &spotlight
+
+                // ----------  Fila 2 (home row optimizada) ----------
+                &kp TAB
                 &kp T
                 &kp I
                 &kp N
                 &kp R
                 &kp A
-                &e_accent
-                &a_accent
                 &kp E
                 &kp O
                 &kp S
                 &kp C
                 &kp L
+                &kp SEMI          // Ñ la podemos poner en otra capa
+
+                // ----------  Fila 3 ----------
                 &kp LSHFT
                 &kp X
                 &kp W
                 &kp J
                 &kp B
-                &enye
-                &u_accent
+                &kp GRAVE         // `
                 &kp F
                 &kp Y
                 &kp K
                 &kp Z
-                &kp RIGHT_SHIFT
+                &kp MINUS
+                &kp RSHFT
+
+                // ----------  Pulgares ----------
                 &kp LGUI
                 &mo 1
                 &kp SPACE
@@ -232,6 +265,7 @@
                 &kp ENTER
             >;
         };
+
 
         raise_layer {
             display-name = "Raise Layer";
