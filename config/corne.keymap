@@ -10,7 +10,7 @@
 
 / {
     macros {
-        spootlight: spootlight {
+        spotlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
@@ -87,10 +87,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp H  &kp G  &kp M     &kp U  &o_accent    &i_accent      &kp D  &kp V        &kp P  &kp Q  &kp ENTER
-&kp T      &kp I  &kp N  &kp R     &kp A  &e_accent    &a_accent      &kp E  &kp O        &kp S  &kp C  &kp L
-&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &enye        &u_accent      &kp F  &kp Y        &kp K  &kp Z  &kp LEFT_SHIFT
-                         &kp LGUI  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &spootlight
+&kp TAB    &kp H  &kp G  &kp M     &kp U  &o_accent    &i_accent      &kp D  &kp V       &kp P  &kp Q  &kp ENTER
+&kp T      &kp I  &kp N  &kp R     &kp A  &e_accent    &a_accent      &kp E  &kp O       &kp S  &kp C  &kp L
+&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &enye        &u_accent      &kp F  &kp Y       &kp K  &kp Z  &kp LEFT_SHIFT
+                         &kp LGUI  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &spotlight
             >;
         };
 
