@@ -19,7 +19,7 @@
         macro_enye: macro_enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp N>;
+            bindings = <&kp LALT &kp N>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
@@ -27,7 +27,7 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp A>;
+            bindings = <&kp LALT &kp E>, <&kp A>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
@@ -35,7 +35,7 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp E>;
+            bindings = <&kp LALT &kp E>, <&kp E>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
@@ -43,7 +43,7 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp I>;
+            bindings = <&kp LALT &kp E>, <&kp I>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
@@ -51,7 +51,7 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp O>;
+            bindings = <&kp LALT &kp E>, <&kp O>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
@@ -59,7 +59,7 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp U>;
+            bindings = <&kp LALT &kp E>, <&kp U>;
             wait-ms = <30>;
             tap-ms = <40>;
         };
