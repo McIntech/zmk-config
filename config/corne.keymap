@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors/unicode.dtsi>
+#include <zmk-unicode/keys/spanish.h>
 
 / {
     macros {
@@ -15,92 +17,13 @@
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
         };
-
-        macro_enye: macro_enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT &kp N>;
-            wait-ms = <30>;
-            tap-ms = <40>;
-        };
-
-        macro_a_accent: macro_a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT E>, <&kp A>;
-            wait-ms = <50>;
-            tap-ms = <40>;
-        };
-
-        macro_e_accent: macro_e_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT E>, <&kp E>;
-            wait-ms = <50>;
-            tap-ms = <40>;
-        };
-
-        macro_i_accent: macro_i_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT I>, <&kp I>;
-            wait-ms = <50>;
-            tap-ms = <40>;
-        };
-
-        macro_o_accent: macro_o_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT O>, <&kp O>;
-            wait-ms = <50>;
-            tap-ms = <40>;
-        };
-
-        macro_u_accent: macro_u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT U>, <&kp U>;
-            wait-ms = <50>;
-            tap-ms = <40>;
-        };
     };
 
     behaviors {
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_enye>;
-        };
+    };
 
-        a_accent: a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_a_accent>;
-        };
-
-        e_accent: e_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_e_accent>;
-        };
-
-        i_accent: i_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_i_accent>;
-        };
-
-        o_accent: o_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_o_accent>;
-        };
-
-        u_accent: u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_u_accent>;
-        };
+    &uc {
+        default-mode = <UC_MODE_MACOS>;
     };
 
     keymap {
@@ -116,10 +39,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp H  &kp G  &kp M     &kp U  &o_accent    &i_accent      &kp D  &kp V       &kp P  &kp Q  &kp ENTER
-&kp T      &kp I  &kp N  &kp R     &kp A  &e_accent    &a_accent      &kp E  &kp O       &kp S  &kp C  &kp L
-&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &enye        &u_accent      &kp F  &kp Y       &kp K  &kp Z  &kp LEFT_SHIFT
-                         &kp LGUI  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &spotlight
+&kp TAB    &kp H  &kp G  &kp M     &kp U  &uc UC_ES_O_ACUTE  &uc UC_ES_I_ACUTE  &kp D  &kp V       &kp P  &kp Q  &kp ENTER
+&kp T      &kp I  &kp N  &kp R     &kp A  &uc UC_ES_E_ACUTE  &uc UC_ES_A_ACUTE  &kp E  &kp O       &kp S  &kp C  &kp L
+&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &uc UC_ES_N_TILDE  &uc UC_ES_U_ACUTE  &kp F  &kp Y       &kp K  &kp Z  &kp LEFT_SHIFT
+                         &kp LGUI  &mo 1  &kp SPACE          &kp BACKSPACE      &mo 2  &spotlight
             >;
         };
 
