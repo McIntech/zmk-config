@@ -20,10 +20,16 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp E>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp A>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp A>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -31,10 +37,16 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp E>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp E>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -42,10 +54,16 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp E>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp I>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp I>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -53,10 +71,16 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp E>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp O>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp O>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -64,10 +88,16 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp E>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp U>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp U>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -75,10 +105,16 @@
         macro_enye: macro_enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
-                     , <&macro_tap &kp N>
-                     , <&macro_release &kp LALT>
-                     , <&macro_tap &kp N>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N>;
+
             wait-ms = <50>;
             tap-ms = <50>;
         };
@@ -135,10 +171,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp H  &kp G  &kp M     &kp U  &o_accent  &i_accent  &kp D  &kp V       &kp P  &kp Q  &kp ENTER
-&kp T      &kp I  &kp N  &kp R     &kp A  &e_accent  &a_accent  &kp E  &kp O       &kp S  &kp C  &kp L
-&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &enye      &u_accent  &kp F  &kp Y       &kp K  &kp Z  &kp LEFT_SHIFT
-                         &kp LGUI  &mo 1  &kp SPACE  &kp BACKSPACE  &mo 2  &spotlight
+&kp TAB    &kp H  &kp G  &kp M     &kp U  &o_accent    &i_accent      &kp D  &kp V       &kp P  &kp Q  &kp ENTER
+&kp T      &kp I  &kp N  &kp R     &kp A  &e_accent    &a_accent      &kp E  &kp O       &kp S  &kp C  &kp L
+&kp LSHFT  &kp X  &kp W  &kp J     &kp B  &enye        &u_accent      &kp F  &kp Y       &kp K  &kp Z  &kp RIGHT_SHIFT
+                         &kp LGUI  &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &spotlight
             >;
         };
 
