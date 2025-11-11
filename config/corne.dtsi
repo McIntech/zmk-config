@@ -2,14 +2,11 @@
     chosen {
         zmk,display = &oled;
     };
-
-    display_status_screen {
-        label = "OLED Display";
-    };
 };
 
 &pro_micro_i2c {
     status = "okay";
+    clock-frequency = <400000>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -20,6 +17,7 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
+        prechargep = <0x22>;
         segment-remap;
         com-invdir;
     };
