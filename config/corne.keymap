@@ -20,6 +20,17 @@
 
 / {
         macros {
+
+        vol_up: vol_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LCTRL
+                &macro_tap &kp C_VOL_UP
+                &macro_release &kp LCTRL
+            >;
+        };
+
         spotlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -225,7 +236,7 @@
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-                &kp TAB
+                &vol_up
                 &kp EXCL
                 &kp AT
                 &kp HASH
