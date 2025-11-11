@@ -23,6 +23,8 @@
                      , <&macro_tap &kp E>
                      , <&macro_release &kp LALT>
                      , <&macro_tap &kp A>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
 
         macro_e_accent: macro_e_accent {
@@ -32,6 +34,8 @@
                      , <&macro_tap &kp E>
                      , <&macro_release &kp LALT>
                      , <&macro_tap &kp E>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
 
         macro_i_accent: macro_i_accent {
@@ -41,6 +45,8 @@
                      , <&macro_tap &kp E>
                      , <&macro_release &kp LALT>
                      , <&macro_tap &kp I>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
 
         macro_o_accent: macro_o_accent {
@@ -50,6 +56,8 @@
                      , <&macro_tap &kp E>
                      , <&macro_release &kp LALT>
                      , <&macro_tap &kp O>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
 
         macro_u_accent: macro_u_accent {
@@ -59,6 +67,8 @@
                      , <&macro_tap &kp E>
                      , <&macro_release &kp LALT>
                      , <&macro_tap &kp U>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
 
         macro_enye: macro_enye {
@@ -66,7 +76,10 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>
                      , <&macro_tap &kp N>
-                     , <&macro_release &kp LALT>;
+                     , <&macro_release &kp LALT>
+                     , <&macro_tap &kp N>;
+            wait-ms = <50>;
+            tap-ms = <50>;
         };
     };
 
