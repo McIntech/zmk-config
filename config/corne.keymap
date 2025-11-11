@@ -19,51 +19,39 @@
 
     behaviors {
         enye: enye {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "ñ";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(N)>;
         };
 
         a_accent: a_accent {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "á";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(A)>;
         };
 
         e_accent: e_accent {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "é";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(E)>;
         };
 
         i_accent: i_accent {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "í";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(I)>;
         };
 
         o_accent: o_accent {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "ó";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(O)>;
         };
 
         u_accent: u_accent {
-            compatible = "zmk,behavior-send-string";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            text = "ú";
-            wait-ms = <30>;
-            tap-ms = <40>;
+            bindings = <&kp RA(U)>;
         };
     };
 
