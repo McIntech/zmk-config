@@ -66,13 +66,6 @@ include:
     shield: corne_right nice_oled
     artifact-name: nice_corne_right_oled
 
-    # peripheral_left + nice_nano_v2 + nice_oled
-  - board: nice_nano_v2
-    shield: corne_left_peripheral nice_oled
-    artifact-name: nice_corne_left_peripheral_oled
-
-  ### nice_oled END ###
-
   ### SETTINGS_RESET START ###
   - board: nice_nano_v2
     shield: settings_reset
