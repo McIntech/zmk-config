@@ -204,7 +204,7 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_enye>;
+            bindings = <&enye>;
         };
     };
 
