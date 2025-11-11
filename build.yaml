@@ -5,7 +5,7 @@
 # Email: mctechnology170318@gmail.com
 # GitHub: https://github.com/mctechnology17
 # Brief: configuration file for ZMK firmware
-# Board: nice_nano_v2 and puchi_ble_v1
+# Board: nice_nano_v2
 # shield: corne_left nice_view_adapter nice_view,
 #         corne_right nice_view_adapter nice_view,
 #         corne_left, corne_right and settings_reset
@@ -66,25 +66,11 @@ include:
     shield: corne_right nice_oled
     artifact-name: nice_corne_right_oled
 
-    # puchi_ble_v1 + nice_oled
-  - board: puchi_ble_v1
-    shield: corne_left nice_oled
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Corne_O\"
-    artifact-name: puchi_corne_left_oled
-    snippet: studio-rpc-usb-uart
-  - board: puchi_ble_v1
-    shield: corne_right nice_oled
-    artifact-name: puchi_corne_right_oled
-
     # peripheral_left + nice_nano_v2 + nice_oled
   - board: nice_nano_v2
     shield: corne_left_peripheral nice_oled
     artifact-name: nice_corne_left_peripheral_oled
 
-    # peripheral_left + puchi_ble_v1 + nice_oled
-  - board: puchi_ble_v1
-    shield: corne_left_peripheral nice_oled
-    artifact-name: puchi_corne_left_peripheral_oled
   ### nice_oled END ###
 
   ### SETTINGS_RESET START ###
