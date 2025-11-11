@@ -1,24 +1,3 @@
-/ {
-    chosen {
-        zmk,display = &oled;
-    };
-};
-
-&pro_micro_i2c {
-    status = "okay";
-    clock-frequency = <400000>;
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        prechargep = <0x22>;
-        segment-remap;
-        com-invdir;
-    };
-};
+// corne.dtsi - Display configuration handled by nice_view_gem shield
+// The nice_view_gem shield provides its own display configuration via SPI
+// No need to define display here as it's handled by the shield
