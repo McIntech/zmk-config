@@ -18,307 +18,67 @@
     chain-length = <27>;
 };
 
-/ {
-        macros {
+&{};
 
-        vol_up: vol_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LCTRL
-                &macro_tap &kp C_VOL_UP
-                &macro_release &kp LCTRL
-            >;
-        };
-
-        spotlight: spootlight {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-			    &macro_press &kp LGUI      // 1. Presiona ⌘ (Command)
-			    &macro_tap   &kp SPACE     // 2. Toca SPACE mientras ⌘ sigue presionado
-			    &macro_release &kp LGUI    // 3. Suelta ⌘ (Command)
-            >;
-        };
-
-        macro_a_accent: macro_a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp A
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_e_accent: macro_e_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp E
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_i_accent: macro_i_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp I
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_o_accent: macro_o_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp O
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_u_accent: macro_u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp U
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        accent_dead: accent_dead {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-            >;
-            wait-ms = <10>;
-            tap-ms = <10>;
-        };
-
-        // tecla ñ
-        ene_letter: ene_letter {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp N
-                &macro_release &kp LALT
-                &macro_tap &kp N
-            >;
-            wait-ms = <10>;
-            tap-ms = <10>;
-        };
-
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp N
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp N
-            >;
-            wait-ms = <10>;
-            tap-ms = <10>;
-        };
-    };
-
-    behaviors {
-        a_accent: a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_a_accent>;
-        };
-
-        e_accent: e_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_e_accent>;
-        };
-
-        i_accent: i_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_i_accent>;
-        };
-
-        o_accent: o_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_o_accent>;
-        };
-
-        u_accent: u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_u_accent>;
-        };
-
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&enye>;
-        };
-    };
-
+ / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Default Layer";
+            display-name = "BAS";
             bindings = <
-                // ----------  Fila 1 ----------
-                &kp ESC
-                &kp H
-                &kp G
-                &kp M
-                &kp U
-                &accent_dead // tecla ´ (acento agudo)
-                &kp EQUAL
-                &kp D
-                &kp V
-                &kp P
-                &kp Q
-                &spotlight
-
-                // ----------  Fila 2 (home row optimizada) ----------
                 &kp TAB
-                &kp T
-                &kp I
-                &kp N
-                &kp R
-                &kp A
-                &kp E
-                &kp O
-                &kp S
-                &kp C
-                &kp L
-                &kp SEMI          // Ñ la podemos poner en otra capa
-
-                // ----------  Fila 3 ----------
-                &kp LSHFT
-                &kp X
+                &kp Q
                 &kp W
-                &kp J
-                &kp B
-                &kp GRAVE         // `
-                &kp F
+                &kp E
+                &kp R
+                &kp T
                 &kp Y
-                &kp K
-                &kp Z
-                &kp MINUS
-                &kp RSHFT
+                &kp U
+                &kp I
+                &kp O
+                &kp P
+                &kp BSPC
 
-                // ----------  Pulgares ----------
+                &kp LCTRL
+                &kp A
+                &kp S
+                &kp D
+                &kp F
+                &kp G
+                &kp H
+                &kp J
+                &kp K
+                &kp L
+                &kp SEMI
+                &kp SQT
+
+                &kp LSHFT
+                &kp Z
+                &kp X
+                &kp C
+                &kp V
+                &kp B
+                &kp N
+                &kp M
+                &kp COMMA
+                &kp DOT
+                &kp FSLH
+                &kp ESC
+
                 &kp LGUI
                 &mo 1
                 &kp SPACE
-                &kp BACKSPACE
-                &mo 2
-                &kp ENTER
-            >;
-        };
-
-
-        raise_layer {
-            display-name = "Raise Layer";
-            bindings = <
-                &vol_up
-                &kp EXCL
-                &kp AT
-                &kp HASH
-                &kp DLLR
-                &kp PRCNT
-                &kp CARET
-                &kp AMPS
-                &kp ASTRK
-                &kp LPAR
-                &kp RPAR
-                &kp BSPC
-                &kp LCTRL
-                &trans
-                &trans
-                &trans
-                &trans
-                &trans
-                &kp MINUS
-                &kp EQUAL
-                &kp LBKT
-                &kp RBKT
-                &kp BSLH
-                &kp GRAVE
-                &kp LSHFT
-                &trans
-                &trans
-                &trans
-                &trans
-                &trans
-                &kp UNDER
-                &kp PLUS
-                &kp LBRC
-                &kp RBRC
-                &kp PIPE
-                &kp TILDE
-                &kp LGUI
-                &trans
-                &kp SPACE
                 &kp RET
-                &trans
+                &mo 2
                 &kp RALT
             >;
         };
 
         lower_layer {
-            display-name = "Lower Layer";
+            display-name = "LOW";
             bindings = <
-                &kp N0
+                &kp TAB
                 &kp N1
                 &kp N2
                 &kp N3
@@ -330,6 +90,7 @@
                 &kp N9
                 &kp N0
                 &kp BSPC
+
                 &bt BT_CLR
                 &bt BT_SEL 0
                 &bt BT_SEL 1
@@ -342,6 +103,7 @@
                 &kp RIGHT
                 &trans
                 &trans
+
                 &kp LSHFT
                 &trans
                 &trans
@@ -354,6 +116,7 @@
                 &trans
                 &trans
                 &trans
+
                 &kp LGUI
                 &trans
                 &kp SPACE
@@ -362,5 +125,60 @@
                 &kp RALT
             >;
         };
+
+        raise_layer {
+            display-name = "RAI";
+            bindings = <
+                &kp TAB
+                &kp EXCL
+                &kp AT
+                &kp HASH
+                &kp DLLR
+                &kp PRCNT
+                &kp CARET
+                &kp AMPS
+                &kp KP_MULTIPLY
+                &kp LPAR
+                &kp RPAR
+                &kp BSPC
+
+                &kp LCTRL
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &kp MINUS
+                &kp EQUAL
+                &kp LBKT
+                &kp RBKT
+                &kp BSLH
+                &kp GRAVE
+
+                &kp LSHFT
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &kp UNDER
+                &kp PLUS
+                &kp LBRC
+                &kp RBRC
+                &kp PIPE
+                &kp TILDE
+
+                &kp LGUI
+                &studio_unlock
+                &kp SPACE
+                &kp RET
+                &studio_unlock
+                &kp RALT
+            >;
+        };
+
+        extra_1 { status = "reserved"; };
+        extra_2 { status = "reserved"; };
+        extra_3 { status = "reserved"; };
     };
 };
