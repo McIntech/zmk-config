@@ -1,3 +1,0 @@
-// corne.dtsi - Display configuration handled by nice_view_gem shield
-// The nice_view_gem shield provides its own display configuration via SPI
-// No need to define display here as it's handled by the shield
