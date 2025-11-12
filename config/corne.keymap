@@ -19,117 +19,34 @@
 };
 
 / {
-        macros {
-
-        vol_up: vol_up {
+    macros {
+        spotlight: spotlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LCTRL
-                &macro_tap &kp C_VOL_UP
-                &macro_release &kp LCTRL
+            bindings = 
+                &macro_press &kp LGUI
+                &macro_tap &kp SPACE
+                &macro_release &kp LGUI
             >;
         };
 
-        spotlight: spootlight {
+        ene_letter: ene_letter {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-			    &macro_press &kp LGUI      // 1. Presiona ⌘ (Command)
-			    &macro_tap   &kp SPACE     // 2. Toca SPACE mientras ⌘ sigue presionado
-			    &macro_release &kp LGUI    // 3. Suelta ⌘ (Command)
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp N
+                &macro_release &kp LALT
+                &macro_tap &kp N
             >;
-        };
-
-        macro_a_accent: macro_a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp A
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_e_accent: macro_e_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp E
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_i_accent: macro_i_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp I
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_o_accent: macro_o_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp O
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
-        };
-
-        macro_u_accent: macro_u_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp E
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp U
-            >;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
 
         accent_dead: accent_dead {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -138,73 +55,67 @@
             tap-ms = <10>;
         };
 
-        // tecla ñ
-        ene_letter: ene_letter {
+        inv_question: inv_question {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
+                &macro_press &kp LSHIFT
                 &macro_press &kp LALT
-                &macro_tap &kp N
+                &macro_tap &kp SLASH
                 &macro_release &kp LALT
-                &macro_tap &kp N
+                &macro_release &kp LSHIFT
             >;
             wait-ms = <10>;
             tap-ms = <10>;
         };
 
-        macro_enye: macro_enye {
+        inv_exclaim: inv_exclaim {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press
-                &kp LALT
-                &macro_tap
-                &kp N
-                &macro_release
-                &kp LALT
-                &macro_tap
-                &kp N
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp N1
+                &macro_release &kp LALT
             >;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
     };
 
     behaviors {
-        a_accent: a_accent {
-            compatible = "zmk,behavior-macro";
+        dot_comma: dot_comma {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_a_accent>;
+            bindings = <&kp DOT>, <&kp COMMA>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        e_accent: e_accent {
-            compatible = "zmk,behavior-macro";
+        
+        minus_under: minus_under {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_e_accent>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        i_accent: i_accent {
-            compatible = "zmk,behavior-macro";
+        
+        apos_dqt: apos_dqt {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_i_accent>;
+            bindings = <&kp APOS>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        o_accent: o_accent {
-            compatible = "zmk,behavior-macro";
+        
+        fslh_bslh: fslh_bslh {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_o_accent>;
+            bindings = <&kp SLASH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        u_accent: u_accent {
-            compatible = "zmk,behavior-macro";
+        
+        colon_semi: colon_semi {
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_u_accent>;
-        };
-
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_enye>;
+            bindings = <&kp COLON>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -212,170 +123,146 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "Default Layer";
-            bindings = <
-            // ----------  Fila 1  ----------
+            display-name = "Spanish";
+            bindings = 
                 &kp ESC
-                &kp H
+                &kp W
+                &kp F
+                &kp P
+                &kp B
+                &kp J
+                &kp L
+                &kp U
+                &kp Y
+                &ene_letter
+                &accent_dead
+                &spotlight
+                &kp TAB
+                &kp R
+                &kp S
+                &kp T
                 &kp G
                 &kp M
-                &kp U
-                &kp U
-            // ----------  Fila 1  ----------
-                &kp U
+                &kp N
+                &kp E
+                &kp I
+                &kp O
+                &kp H
+                &colon_semi
+                &kp LSHFT
+                &kp Z
+                &kp X
+                &kp C
                 &kp D
                 &kp V
-                &kp P
-                &kp Q
-                &spotlight
-            // ----------  Fila 2  ----------
-                &kp T
-                &kp I
-                &kp N
-                &kp R
-                &kp A
-                &kp U
-            // ----------  Fila 1  ----------
-                &kp U
-                &kp E
-                &kp O
-                &kp S
-                &kp C
-                &kp L
-            // ----------  Fila 3  ----------
-                &kp LSHFT
-                &kp X
-                &kp W
-                &kp J
-                &kp B
-                &enye
-            // ----------  Fila 1  ----------
-                &kp U
-                &kp F
-                &kp Y
                 &kp K
-                &kp Z
-                &kp RIGHT_SHIFT
-            // ----------  Fila 4  ----------
+                &kp Q
+                &dot_comma
+                &minus_under
+                &apos_dqt
+                &fslh_bslh
                 &kp LGUI
                 &mo 1
                 &kp SPACE
-            // ----------  Fila 5  ----------
                 &kp BACKSPACE
                 &mo 2
                 &kp ENTER
             >;
         };
 
-        raise_layer {
-            display-name = "Raise Layer";
-            bindings = <
-            // ----------  Fila 1  ----------
-                &vol_up
+        symbols_layer {
+            display-name = "Symbols";
+            bindings = 
                 &kp EXCL
                 &kp AT
                 &kp HASH
                 &kp DLLR
                 &kp PRCNT
-            // ----------  Fila 2  ----------
                 &kp CARET
                 &kp AMPS
                 &kp ASTRK
-                &kp LPAR
-                &kp RPAR
-                &kp BSPC
-            // ----------  Fila 3  ----------
-                &kp LCTRL
-                &trans
-                &trans
-                &trans
-                &trans
-                &trans
-            // ----------  Fila 4  ----------
-                &kp MINUS
-                &kp EQUAL
-                &kp LBKT
-                &kp RBKT
-                &kp BSLH
-                &kp GRAVE
-            // ----------  Fila 5  ----------
-                &kp LSHFT
-                &trans
-                &trans
-                &trans
-                &trans
-                &trans
-            // ----------  Fila 6  ----------
-                &kp UNDER
+                &inv_question
                 &kp PLUS
+                &kp EQUAL
+                &kp DEL
+                &kp LPAR
+                &kp LBKT
                 &kp LBRC
+                &kp LT
+                &kp A
+                &kp QMARK
+                &inv_exclaim
+                &kp GT
                 &kp RBRC
-                &kp PIPE
-                &kp TILDE
-            // ----------  Pulgares 1  ----------
-                &kp LGUI
-                &trans
-                &kp SPACE
-            // ----------  Pulgares 2  ----------
-                &kp RET
-                &trans
-                &kp RALT
-            >;
-        };
-
-        lower_layer {
-            display-name = "Lower Layer";
-            bindings = <
-            // ----------  Fila 1  ----------
-                &kp N0
+                &kp RBKT
+                &kp RPAR
+                &kp ESC
+                &kp TAB
                 &kp N1
                 &kp N2
                 &kp N3
                 &kp N4
                 &kp N5
-            // ----------  Fila 1  ----------
                 &kp N6
                 &kp N7
                 &kp N8
                 &kp N9
                 &kp N0
-                &kp BSPC
-            // ----------  Fila 1  ----------
-                &bt BT_CLR
+                &kp GRAVE
+                &kp LALT
+                &trans
+                &kp SPACE
+                &kp RGUI
+                &kp RCTRL
+                &kp RSHIFT
+            >;
+        };
+
+        navigation_layer {
+            display-name = "Nav";
+            bindings = 
+                &kp F1
+                &kp F2
+                &kp F3
+                &kp F4
+                &kp F5
+                &kp F6
+                &kp F7
+                &kp F8
+                &kp F9
+                &kp F10
+                &kp F11
+                &kp F12
                 &bt BT_SEL 0
                 &bt BT_SEL 1
                 &bt BT_SEL 2
                 &bt BT_SEL 3
                 &bt BT_SEL 4
-            // ----------  Fila 1  ----------
+                &bt BT_CLR
                 &kp LEFT
                 &kp DOWN
                 &kp UP
                 &kp RIGHT
-                &trans
-                &trans
-            // ----------  Fila 1  ----------
-                &kp LSHFT
-                &trans
-                &trans
-                &trans
-                &trans
-                &trans
-            // ----------  Fila 1  ----------
+                &kp HOME
+                &kp END
+                &kp CAPS
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
-                &trans
-            // ----------  Fila 1  ----------
-                &kp LGUI
-                &trans
+                &kp C_VOL_DN
+                &kp C_VOL_UP
+                &kp C_MUTE
+                &kp PG_UP
+                &kp PG_DN
+                &kp UNDER
+                &kp LCTRL
+                &kp LALT
                 &kp SPACE
-            // ----------  Fila 1  ----------
-                &kp RET
+                &kp BACKSPACE
                 &trans
-                &kp RALT
+                &kp ENTER
             >;
         };
     };
