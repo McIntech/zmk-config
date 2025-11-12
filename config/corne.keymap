@@ -252,8 +252,8 @@
                 &kp HASH       // #
                 &kp DLLR       // $
                 &kp PERC       // %
-                &kp LPAR       // (
-                &kp RPAR       // )
+                &kp LPAR       
+                &kp RPAR       
                 &kp AMPS       // &
                 &kp FSLH       // /
                 &kp EQUAL      // =
@@ -266,8 +266,8 @@
                 &kp N3
                 &kp N4
                 &kp N5
-                &kp LCBR       // {
-                &kp RCBR       // }
+                &kp LCBR       
+                &kp RCBR       
                 &kp N6
                 &kp N7
                 &kp N8
@@ -275,17 +275,17 @@
                 &kp N0
 
             // ----------  Fila 3  ----------
-                &kp AT         // @
-                &kp GRAVE      // `
-                &kp BSLH       // \
-                &kp TILDE      // ~
-                &kp CARET      // ^
-                &kp LBRC       // [
-                &kp RBRC       // ]
+                &kp AT         
+                &kp GRAVE      
+                &kp BSLH       
+                &kp TILDE      
+                &kp CARET      
+                &kp LBRC       
+                &kp RBRC       
                 &kp PLUS       // +
                 &kp MINUS      // -
                 &kp STAR       // *
-                &kp UNDERSCORE // _
+                &kp UNDERSCORE 
                 &kp COLON      // :
             // ----------  Pulgares 1  ----------
                 &kp LGUI
