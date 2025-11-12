@@ -217,7 +217,7 @@
                 &kp O
                 &kp S
                 &kp L
-                &enye
+                &enye // ñ
             // ----------  Mano izquierda - Fila 3  ----------
                 &kp LSHFT
                 &kp SINGLE_QUOTE
@@ -251,7 +251,7 @@
                 &kp SQT       // "
                 &kp HASH       // #
                 &kp DLLR       // $
-                &kp PERC       // %
+                &kp PERCENT       // %
                 &kp LPAR       
                 &kp RPAR       
                 &kp AMPS       // &
