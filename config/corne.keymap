@@ -52,8 +52,8 @@
                 &macro_tap
                 &kp A
             >;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
 
         macro_e_accent: macro_e_accent {
@@ -353,8 +353,8 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &kp ESC
-                &kp B
+                &macro_a_accent
+                &a_accent
                 &kp G
                 &kp M
                 &kp U
