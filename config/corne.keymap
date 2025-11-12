@@ -316,9 +316,12 @@
 
     behaviors {
         a_accent: a_accent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_a_accent>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;  // Ajusta este valor (150-250ms)
+            quick-tap-ms = <125>;      // Permite doble tap rápido
+            bindings = <&macro_a_accent>, <&kp>;
         };
 
         e_accent: e_accent {
