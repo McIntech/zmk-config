@@ -220,9 +220,9 @@
                 &kp G
                 &kp M
                 &kp U
-                &o_accent
+                &kp U
             // ----------  Fila 1  ----------
-                &i_accent
+                &kp U
                 &kp D
                 &kp V
                 &kp P
@@ -234,9 +234,9 @@
                 &kp N
                 &kp R
                 &kp A
-                &e_accent
+                &kp U
             // ----------  Fila 1  ----------
-                &a_accent
+                &kp U
                 &kp E
                 &kp O
                 &kp S
@@ -250,7 +250,7 @@
                 &kp B
                 &enye
             // ----------  Fila 1  ----------
-                &u_accent
+                &kp U
                 &kp F
                 &kp Y
                 &kp K
