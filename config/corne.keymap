@@ -214,53 +214,53 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-            // ----------  Fila 1  ----------
+            // ----------  Mano izquierda - Fila 1  ----------
                 &kp ESC
                 &kp H
                 &kp G
                 &kp M
                 &kp U
                 &kp U
-            // ----------  Fila 1  ----------
+            // ----------  Mano derecha - Fila 1  ----------
                 &kp U
                 &kp D
                 &kp V
                 &kp P
                 &kp Q
                 &spotlight
-            // ----------  Fila 2  ----------
+            // ----------  Mano izquierda - Fila 2  ----------
+                &kp TAB
                 &kp T
-                &kp I
                 &kp N
                 &kp R
                 &kp A
-                &kp U
-            // ----------  Fila 1  ----------
-                &kp U
+                &kp I
+            // ----------  Mano derecha - Fila 2  ----------
+                &kp C
                 &kp E
                 &kp O
                 &kp S
-                &kp C
                 &kp L
-            // ----------  Fila 3  ----------
+                &enye
+            // ----------  Mano izquierda - Fila 3  ----------
                 &kp LSHFT
                 &kp X
                 &kp W
                 &kp J
                 &kp B
                 &enye
-            // ----------  Fila 1  ----------
+            // ----------  Mano derecha - Fila 3  ----------
                 &kp U
                 &kp F
                 &kp Y
                 &kp K
                 &kp Z
                 &kp RIGHT_SHIFT
-            // ----------  Fila 4  ----------
+            // ----------  Pulgares 1  ----------
                 &kp LGUI
                 &mo 1
                 &kp SPACE
-            // ----------  Fila 5  ----------
+            // ----------  Pulgares 2  ----------
                 &kp BACKSPACE
                 &mo 2
                 &kp ENTER
