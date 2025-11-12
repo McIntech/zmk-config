@@ -214,21 +214,20 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-                // ----------  Fila 1 ----------
+            // ----------  Fila 1  ----------
                 &kp ESC
                 &kp H
                 &kp G
                 &kp M
                 &kp U
-                &kp QUOTE         // tecla ´ (acento agudo)
-                &kp EQUAL
+                &o_accent
+                &i_accent
                 &kp D
                 &kp V
                 &kp P
                 &kp Q
                 &spotlight
-
-                // ----------  Fila 2 (home row optimizada) ----------
+            // ----------  Fila 2  ----------
                 &kp TAB
                 &kp T
                 &kp I
@@ -240,32 +239,30 @@
                 &kp S
                 &kp C
                 &kp L
-                &kp SEMI          // Ñ la podemos poner en otra capa
-
-                // ----------  Fila 3 ----------
+                &enye 
+            // ----------  Fila 3  ----------
                 &kp LSHFT
                 &kp X
                 &kp W
                 &kp J
                 &kp B
-                &kp GRAVE         // `
+                &enye
+                &u_accent
                 &kp F
                 &kp Y
                 &kp K
                 &kp Z
-                &kp MINUS
-                &kp RSHFT
-
-                // ----------  Pulgares ----------
+                &kp RIGHT_SHIFT
+            // ----------  Pulgar 1  ----------
                 &kp LGUI
                 &mo 1
                 &kp SPACE
+            // ----------  Pulgar 2  ----------
                 &kp BACKSPACE
                 &mo 2
                 &kp ENTER
             >;
         };
-
 
         raise_layer {
             display-name = "Raise Layer";
