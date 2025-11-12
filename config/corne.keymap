@@ -358,7 +358,7 @@
             // ----------  Mano izquierda - Fila 1  ----------
                 &macro_a_accent
                 &a_accent
-                &kp G
+                &a_accent 0 A
                 &kp M
                 &kp U
                 &kp H
