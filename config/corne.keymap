@@ -357,7 +357,7 @@
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
                 &macro_a_accent
-                &a_accent
+                &a_accent 0 A
                 &a_accent 0 A
                 &kp M
                 &kp U
