@@ -221,7 +221,7 @@
                 &kp M
                 &kp U
                 &o_accent
-            / ----------  Fila 1  ----------
+            // ----------  Fila 1  ----------
                 &i_accent
                 &kp D
                 &kp V
@@ -235,7 +235,7 @@
                 &kp R
                 &kp A
                 &e_accent
-            / ----------  Fila 1  ----------
+            // ----------  Fila 1  ----------
                 &a_accent
                 &kp E
                 &kp O
@@ -249,7 +249,7 @@
                 &kp J
                 &kp B
                 &enye
-            / ----------  Fila 1  ----------
+            // ----------  Fila 1  ----------
                 &u_accent
                 &kp F
                 &kp Y
@@ -372,7 +372,7 @@
                 &kp LGUI
                 &trans
                 &kp SPACE
-            / ----------  Fila 1  ----------
+            // ----------  Fila 1  ----------
                 &kp RET
                 &trans
                 &kp RALT
