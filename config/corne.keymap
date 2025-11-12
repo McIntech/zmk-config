@@ -52,8 +52,8 @@
                 &macro_tap
                 &kp A
             >;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <200>;
+            tap-ms = <125>;
         };
 
         macro_e_accent: macro_e_accent {
