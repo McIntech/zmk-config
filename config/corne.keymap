@@ -29,7 +29,7 @@
             >;
         };
 
-        spotlight: spootlight {
+        spootlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
