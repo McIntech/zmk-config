@@ -303,29 +303,29 @@
             bindings = <
             // ----------  Fila 1  ----------
                 &kp LC(C_BRIGHTNESS_INC)
-                &kp C_VOLUME_DOWN
-                &kp C_PLAY_PAUSE
-                &kp C_BRIGHTNESS_INC
-                &kp C_BRIGHTNESS_DEC
-                &kp C_NEXT
-                &kp C_PREV
-                &kp C_AC_SEARCH
-                &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
-                &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
-                &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT
-                &kp K_CUT
+                &kp LC(C_VOLUME_DOWN)
+                &kp LC(C_PLAY_PAUSE)
+                &kp LC(C_BRIGHTNESS_INC)
+                &kp LC(C_BRIGHTNESS_DEC)
+                &kp LC(C_NEXT)
+                &kp LC(C_PREV)
+                &kp LC(C_AC_SEARCH)
+                &kp LC(C_AC_DESKTOP_SHOW_ALL_WINDOWS)
+                &kp LC(C_AC_DESKTOP_SHOW_ALL_APPLICATIONS)
+                &kp LC(C_AC_NEXT_KEYBOARD_LAYOUT_SELECT)
+                &kp LC(K_CUT)
             // ----------  Fila 2  ----------
-                &kp K_COPY
-                &kp K_PASTE
+                &kp LC(K_COPY)
+                &kp LC(K_PASTE)
                 &kp N2
                 &kp N3
                 &kp N4
                 &kp N5
-                &vol_up
                 &kp LEFT_ARROW
                 &kp DOWN_ARROW
                 &kp UP_ARROW
                 &kp RIGHT_ARROW
+                &kp N1
                 &kp N3
             // ----------  Fila 3  ----------
                 &vol_up
