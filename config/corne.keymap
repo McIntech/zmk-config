@@ -221,6 +221,7 @@
                 &kp M
                 &kp U
                 &o_accent
+            / ----------  Fila 1  ----------
                 &i_accent
                 &kp D
                 &kp V
@@ -234,6 +235,7 @@
                 &kp R
                 &kp A
                 &e_accent
+            / ----------  Fila 1  ----------
                 &a_accent
                 &kp E
                 &kp O
@@ -247,6 +249,7 @@
                 &kp J
                 &kp B
                 &enye
+            / ----------  Fila 1  ----------
                 &u_accent
                 &kp F
                 &kp Y
@@ -267,45 +270,53 @@
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
+            // ----------  Fila 1  ----------
                 &vol_up
                 &kp EXCL
                 &kp AT
                 &kp HASH
                 &kp DLLR
                 &kp PRCNT
+            // ----------  Fila 2  ----------
                 &kp CARET
                 &kp AMPS
                 &kp ASTRK
                 &kp LPAR
                 &kp RPAR
                 &kp BSPC
+            // ----------  Fila 3  ----------
                 &kp LCTRL
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
+            // ----------  Fila 4  ----------
                 &kp MINUS
                 &kp EQUAL
                 &kp LBKT
                 &kp RBKT
                 &kp BSLH
                 &kp GRAVE
+            // ----------  Fila 5  ----------
                 &kp LSHFT
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
+            // ----------  Fila 6  ----------
                 &kp UNDER
                 &kp PLUS
                 &kp LBRC
                 &kp RBRC
                 &kp PIPE
                 &kp TILDE
+            // ----------  Pulgares 1  ----------
                 &kp LGUI
                 &trans
                 &kp SPACE
+            // ----------  Pulgares 2  ----------
                 &kp RET
                 &trans
                 &kp RALT
@@ -315,45 +326,53 @@
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
+            // ----------  Fila 1  ----------
                 &kp N0
                 &kp N1
                 &kp N2
                 &kp N3
                 &kp N4
                 &kp N5
+            // ----------  Fila 1  ----------
                 &kp N6
                 &kp N7
                 &kp N8
                 &kp N9
                 &kp N0
                 &kp BSPC
+            // ----------  Fila 1  ----------
                 &bt BT_CLR
                 &bt BT_SEL 0
                 &bt BT_SEL 1
                 &bt BT_SEL 2
                 &bt BT_SEL 3
                 &bt BT_SEL 4
+            // ----------  Fila 1  ----------
                 &kp LEFT
                 &kp DOWN
                 &kp UP
                 &kp RIGHT
                 &trans
                 &trans
+            // ----------  Fila 1  ----------
                 &kp LSHFT
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
+            // ----------  Fila 1  ----------
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
                 &trans
+            // ----------  Fila 1  ----------
                 &kp LGUI
                 &trans
                 &kp SPACE
+            / ----------  Fila 1  ----------
                 &kp RET
                 &trans
                 &kp RALT
