@@ -152,7 +152,7 @@
             tap-ms = <10>;
         };
 
-        enye: enye {
+        macro_enye: macro_enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -165,8 +165,8 @@
                 &macro_tap
                 &kp N
             >;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
     };
 
@@ -228,18 +228,18 @@
                 &kp Q
                 &spotlight
             // ----------  Fila 2  ----------
-                &kp TAB
                 &kp T
                 &kp I
                 &kp N
                 &kp R
                 &kp A
+                &e_accent
+                &a_accent
                 &kp E
                 &kp O
                 &kp S
                 &kp C
                 &kp L
-                &enye 
             // ----------  Fila 3  ----------
                 &kp LSHFT
                 &kp X
@@ -253,11 +253,11 @@
                 &kp K
                 &kp Z
                 &kp RIGHT_SHIFT
-            // ----------  Pulgar 1  ----------
+            // ----------  Fila 4  ----------
                 &kp LGUI
                 &mo 1
                 &kp SPACE
-            // ----------  Pulgar 2  ----------
+            // ----------  Fila 5  ----------
                 &kp BACKSPACE
                 &mo 2
                 &kp ENTER
