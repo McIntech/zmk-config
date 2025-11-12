@@ -204,7 +204,7 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&enye>;
+            bindings = <&macro_enye>;
         };
     };
 
@@ -220,7 +220,7 @@
                 &kp G
                 &kp M
                 &kp U
-                &accent_dead // tecla ´ (acento agudo)
+                &kp QUOTE         // tecla ´ (acento agudo)
                 &kp EQUAL
                 &kp D
                 &kp V
