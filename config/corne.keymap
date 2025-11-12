@@ -19,54 +19,40 @@
 };
 
 / {
-    macros {
-        // Spotlight macro para búsqueda rápida
-        spotlight: spotlight {
+        macros {
+
+        vol_up: vol_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LGUI
-                &macro_tap &kp SPACE
-                &macro_release &kp LGUI
+            bindings = <
+                &macro_press &kp LCTRL
+                &macro_tap &kp C_VOL_UP
+                &macro_release &kp LCTRL
             >;
         };
 
-        // Macro para ñ
-        ene_letter: ene_letter {
+        spotlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp N
-                &macro_release &kp LALT
-                &macro_tap &kp N
+            bindings = <
+			    &macro_press &kp LGUI      // 1. Presiona ⌘ (Command)
+			    &macro_tap   &kp SPACE     // 2. Toca SPACE mientras ⌘ sigue presionado
+			    &macro_release &kp LGUI    // 3. Suelta ⌘ (Command)
             >;
-            wait-ms = <10>;
-            tap-ms = <10>;
         };
 
-        // Macro para acento muerto ´
-        accent_dead: accent_dead {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-            >;
-            wait-ms = <10>;
-            tap-ms = <10>;
-        };
-
-        // Macros para vocales con acento
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp A
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp E
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp A
             >;
             wait-ms = <1>;
             tap-ms = <1>;
@@ -75,11 +61,15 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp E
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp E
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp E
             >;
             wait-ms = <1>;
             tap-ms = <1>;
@@ -88,11 +78,15 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp I
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp E
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp I
             >;
             wait-ms = <1>;
             tap-ms = <1>;
@@ -101,11 +95,15 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp O
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp E
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp O
             >;
             wait-ms = <1>;
             tap-ms = <1>;
@@ -114,249 +112,254 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp U
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp E
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp U
             >;
             wait-ms = <1>;
             tap-ms = <1>;
         };
 
-        // Macro para ¿
-        inv_question: inv_question {
+        accent_dead: accent_dead {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LSHIFT
+            bindings = <
                 &macro_press &kp LALT
-                &macro_tap &kp SLASH
+                &macro_tap &kp E
                 &macro_release &kp LALT
-                &macro_release &kp LSHIFT
             >;
             wait-ms = <10>;
             tap-ms = <10>;
         };
 
-        // Macro para ¡
-        inv_exclaim: inv_exclaim {
+        // tecla ñ
+        ene_letter: ene_letter {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
-                &macro_tap &kp N1
+                &macro_tap &kp N
                 &macro_release &kp LALT
+                &macro_tap &kp N
+            >;
+            wait-ms = <10>;
+            tap-ms = <10>;
+        };
+
+        enye: enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press
+                &kp LALT
+                &macro_tap
+                &kp N
+                &macro_release
+                &kp LALT
+                &macro_tap
+                &kp N
             >;
             wait-ms = <10>;
             tap-ms = <10>;
         };
     };
 
+    behaviors {
+        a_accent: a_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_a_accent>;
+        };
+
+        e_accent: e_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_e_accent>;
+        };
+
+        i_accent: i_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_i_accent>;
+        };
+
+        o_accent: o_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_o_accent>;
+        };
+
+        u_accent: u_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_u_accent>;
+        };
+
+        enye: enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&enye>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        // LAYER 0 - ESCRITURA ESPAÑOL
         default_layer {
-            display-name = "Spanish";
-            bindings = 
+            display-name = "Default Layer";
+            bindings = <
                 // ----------  Fila 1 ----------
-                // Izquierda: Q W F P B J
-                &kp Q           // Meñique
-                &kp W           // Anular
-                &kp F           // Medio
-                &kp P           // Índice
-                &kp B           // Índice interno
-                &kp J           // Índice interno
-                
-                // Derecha: L U Y Ñ ´ Spotlight
-                &kp L           // Índice interno
-                &kp U           // Índice interno
-                &kp Y           // Índice
-                &ene_letter     // Medio (Ñ)
-                &accent_dead    // Anular (´)
-                &spotlight      // Meñique
+                &kp ESC
+                &kp H
+                &kp G
+                &kp M
+                &kp U
+                &accent_dead // tecla ´ (acento agudo)
+                &kp EQUAL
+                &kp D
+                &kp V
+                &kp P
+                &kp Q
+                &spotlight
 
-                // ----------  Fila 2 (HOME ROW) ----------
-                // Izquierda: A R S T G M
-                &kp A           // Meñique (3ra más frecuente)
-                &kp R           // Anular (5ta más frecuente)
-                &kp S           // Medio (7ma más frecuente)
-                &kp T           // Índice (13va más frecuente)
-                &kp G           // Índice interno
-                &kp M           // Índice interno
-                
-                // Derecha: N E I O H ;
-                &kp N           // Índice interno (8va más frecuente)
-                &kp E           // Índice interno (1ra más frecuente!)
-                &kp I           // Índice (11va más frecuente)
-                &kp O           // Medio (4ta más frecuente)
-                &kp H           // Anular
-                &kp SEMI        // Meñique (;)
+                // ----------  Fila 2 (home row optimizada) ----------
+                &kp TAB
+                &kp T
+                &kp I
+                &kp N
+                &kp R
+                &kp A
+                &kp E
+                &kp O
+                &kp S
+                &kp C
+                &kp L
+                &kp SEMI          // Ñ la podemos poner en otra capa
 
                 // ----------  Fila 3 ----------
-                // Izquierda: Shift Z X C D V
-                &kp LSHFT       // Meñique (Shift)
-                &kp Z           // Anular
-                &kp X           // Medio
-                &kp C           // Índice (9na más frecuente)
-                &kp D           // Índice interno
-                &kp V           // Índice interno
-                
-                // Derecha: K , . - ¿ ?
-                &kp K           // Índice interno
-                &kp COMMA       // Índice interno (,)
-                &kp DOT         // Índice (.)
-                &kp MINUS       // Medio (-)
-                &inv_question   // Anular (¿)
-                &kp QMARK       // Meñique (?)
+                &kp LSHFT
+                &kp X
+                &kp W
+                &kp J
+                &kp B
+                &kp GRAVE         // `
+                &kp F
+                &kp Y
+                &kp K
+                &kp Z
+                &kp MINUS
+                &kp RSHFT
 
                 // ----------  Pulgares ----------
-                // Izquierda: CMD Layer1 Space
-                &kp LGUI        // Command/Windows
-                &mo 1           // Layer 1 (Símbolos)
-                &kp SPACE       // Espacio (2da más frecuente)
-                
-                // Derecha: Backspace Layer2 Enter
-                &kp BACKSPACE   // Backspace (6ta más frecuente)
-                &mo 2           // Layer 2 (Nav/Sistema)
-                &kp ENTER       // Enter
+                &kp LGUI
+                &mo 1
+                &kp SPACE
+                &kp BACKSPACE
+                &mo 2
+                &kp ENTER
             >;
         };
 
-        // LAYER 1 - SÍMBOLOS Y PROGRAMACIÓN
-        symbols_layer {
-            display-name = "Symbols";
-            bindings = 
-                // ----------  Fila 1 ----------
-                // Izquierda: ! @ # $ % ^
-                &kp EXCL        // !
-                &kp AT          // @
-                &kp HASH        // #
-                &kp DLLR        // $
-                &kp PRCNT       // %
-                &kp CARET       // ^
-                
-                // Derecha: & * _ + = Del
-                &kp AMPS        // &
-                &kp ASTRK       // *
-                &kp UNDER       // _
-                &kp PLUS        // +
-                &kp EQUAL       // =
-                &kp DEL         // Delete
 
-                // ----------  Fila 2 ----------
-                // Izquierda: ( [ { < / \
-                &kp LPAR        // (
-                &kp LBKT        // [
-                &kp LBRC        // {
-                &kp LT          // 
-                &kp SLASH       // /
-                &kp BSLH        // \
-                
-                // Derecha: | > } ] ) Esc
-                &kp PIPE        // |
-                &kp GT          // >
-                &kp RBRC        // }
-                &kp RBKT        // ]
-                &kp RPAR        // )
-                &kp ESC         // Escape
-
-                // ----------  Fila 3 ----------
-                // Izquierda: Tab 1 2 3 4 5
-                &kp TAB         // Tab
-                &kp N1          // 1
-                &kp N2          // 2
-                &kp N3          // 3
-                &kp N4          // 4
-                &kp N5          // 5
-                
-                // Derecha: 6 7 8 9 0 `
-                &kp N6          // 6
-                &kp N7          // 7
-                &kp N8          // 8
-                &kp N9          // 9
-                &kp N0          // 0
-                &kp GRAVE       // `
-
-                // ----------  Pulgares ----------
-                // Izquierda: Alt _ Space
-                &kp LALT        // Option/Alt
-                &trans          // Transparente (mantiene Layer1)
-                &kp SPACE       // Space
-                
-                // Derecha: Cmd Ctrl Shift
-                &kp RGUI        // Command derecho
-                &kp RCTRL       // Control
-                &kp RSHIFT      // Shift derecho
+        raise_layer {
+            display-name = "Raise Layer";
+            bindings = <
+                &vol_up
+                &kp EXCL
+                &kp AT
+                &kp HASH
+                &kp DLLR
+                &kp PRCNT
+                &kp CARET
+                &kp AMPS
+                &kp ASTRK
+                &kp LPAR
+                &kp RPAR
+                &kp BSPC
+                &kp LCTRL
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &kp MINUS
+                &kp EQUAL
+                &kp LBKT
+                &kp RBKT
+                &kp BSLH
+                &kp GRAVE
+                &kp LSHFT
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &kp UNDER
+                &kp PLUS
+                &kp LBRC
+                &kp RBRC
+                &kp PIPE
+                &kp TILDE
+                &kp LGUI
+                &trans
+                &kp SPACE
+                &kp RET
+                &trans
+                &kp RALT
             >;
         };
 
-        // LAYER 2 - NAVEGACIÓN Y SISTEMA
-        navigation_layer {
-            display-name = "Nav/System";
-            bindings = 
-                // ----------  Fila 1 ----------
-                // Izquierda: F1 F2 F3 F4 F5 F6
-                &kp F1          // F1
-                &kp F2          // F2
-                &kp F3          // F3
-                &kp F4          // F4
-                &kp F5          // F5
-                &kp F6          // F6
-                
-                // Derecha: F7 F8 F9 F10 F11 F12
-                &kp F7          // F7
-                &kp F8          // F8
-                &kp F9          // F9
-                &kp F10         // F10
-                &kp F11         // F11
-                &kp F12         // F12
-
-                // ----------  Fila 2 ----------
-                // Izquierda: BT1 BT2 BT3 BT4 BT5 BTClear
-                &bt BT_SEL 0    // Bluetooth 1
-                &bt BT_SEL 1    // Bluetooth 2
-                &bt BT_SEL 2    // Bluetooth 3
-                &bt BT_SEL 3    // Bluetooth 4
-                &bt BT_SEL 4    // Bluetooth 5
-                &bt BT_CLR      // Clear Bluetooth
-                
-                // Derecha: ← ↓ ↑ → Home End
-                &kp LEFT        // Flecha izquierda
-                &kp DOWN        // Flecha abajo
-                &kp UP          // Flecha arriba
-                &kp RIGHT       // Flecha derecha
-                &kp HOME        // Home
-                &kp END         // End
-
-                // ----------  Fila 3 ----------
-                // Izquierda: Caps á é í ó ú
-                &kp CAPS        // Caps Lock
-                &macro_a_accent // á
-                &macro_e_accent // é
-                &macro_i_accent // í
-                &macro_o_accent // ó
-                &macro_u_accent // ú
-                
-                // Derecha: Vol- Vol+ Mute PgUp PgDn ¡
-                &kp C_VOL_DN    // Volumen -
-                &kp C_VOL_UP    // Volumen +
-                &kp C_MUTE      // Mute
-                &kp PG_UP       // Page Up
-                &kp PG_DN       // Page Down
-                &inv_exclaim    // ¡
-
-                // ----------  Pulgares ----------
-                // Izquierda: Ctrl Alt Space
-                &kp LCTRL       // Control
-                &kp LALT        // Alt/Option
-                &kp SPACE       // Space
-                
-                // Derecha: Backspace _ Enter
-                &kp BACKSPACE   // Backspace
-                &trans          // Transparente (mantiene Layer2)
-                &kp ENTER       // Enter
+        lower_layer {
+            display-name = "Lower Layer";
+            bindings = <
+                &kp N0
+                &kp N1
+                &kp N2
+                &kp N3
+                &kp N4
+                &kp N5
+                &kp N6
+                &kp N7
+                &kp N8
+                &kp N9
+                &kp N0
+                &kp BSPC
+                &bt BT_CLR
+                &bt BT_SEL 0
+                &bt BT_SEL 1
+                &bt BT_SEL 2
+                &bt BT_SEL 3
+                &bt BT_SEL 4
+                &kp LEFT
+                &kp DOWN
+                &kp UP
+                &kp RIGHT
+                &trans
+                &trans
+                &kp LSHFT
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                &kp LGUI
+                &trans
+                &kp SPACE
+                &kp RET
+                &trans
+                &kp RALT
             >;
         };
     };
