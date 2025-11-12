@@ -238,17 +238,17 @@
                 &enye
             // ----------  Mano izquierda - Fila 3  ----------
                 &kp LSHFT
+                &kp LCTRL
                 &kp X
                 &kp W
-                &kp W
                 &kp J
-                &kp PERIOD
+                &kp DOT
             // ----------  Mano derecha - Fila 3  ----------
-                &kp DOLLAR 
+                &kp DOLLAR
                 &kp Y
                 &kp K
                 &kp Z
-                &ene_letter 
+                &kp LALT
                 &kp RSHFT
             // ----------  Pulgares 1  ----------
                 &kp LGUI
