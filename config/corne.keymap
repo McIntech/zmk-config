@@ -150,6 +150,168 @@
             tap-ms = <10>;
         };
 
+        // Símbolos con Shift para macOS - Fila 1
+        exclamation: exclamation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N1
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        hash_sym: hash_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N3
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        dollar: dollar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N4
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        percent_sym: percent_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N5
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        ampersand: ampersand {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N7
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        left_paren: left_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N9
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        right_paren: right_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N0
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        question: question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp FSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        pipe_sym: pipe_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp BSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Símbolos con Shift para macOS - Fila 3
+        at_sym: at_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N2
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        tilde_sym: tilde_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp GRAVE
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        caret_sym: caret_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N6
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        plus_sym: plus_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp EQUAL
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        star_sym: star_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N8
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        underscore: underscore {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp MINUS
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        colon_sym: colon_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SEMICOLON
+                &macro_release &kp LSHIFT
+            >;
+        };
+
     };
 
     behaviors {
@@ -247,18 +409,18 @@
             display-name = "Raise Layer";
             bindings = <
             // ----------  Fila 1  ----------
-                &kp EXCL
+                &exclamation
                 &kp SQT
-                &kp HASH
-                &kp DLLR
-                &kp PERCENT
-                &kp LPAR
-                &kp RPAR
-                &kp AMPS
+                &hash_sym
+                &dollar
+                &percent_sym
+                &left_paren
+                &right_paren
+                &ampersand
                 &kp FSLH
                 &kp EQUAL
-                &kp QMARK
-                &kp PIPE
+                &question
+                &pipe_sym
 
             // ----------  Fila 2  ----------
                 &kp N1
@@ -275,18 +437,18 @@
                 &kp N0
 
             // ----------  Fila 3  ----------
-                &kp AT
+                &at_sym
                 &kp GRAVE
                 &kp BSLH
-                &kp TILDE
-                &kp CARET
+                &tilde_sym
+                &caret_sym
                 &kp LBRC
                 &kp RBRC
-                &kp PLUS
+                &plus_sym
                 &kp MINUS
-                &kp STAR
-                &kp UNDERSCORE
-                &kp COLON
+                &star_sym
+                &underscore
+                &colon_sym
             // ----------  Pulgares 1  ----------
                 &kp LGUI
                 &mo 1
