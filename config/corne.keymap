@@ -152,7 +152,7 @@
             tap-ms = <10>;
         };
 
-        macro_enye: macro_enye {
+        enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
@@ -165,8 +165,8 @@
                 &macro_tap
                 &kp N
             >;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
     };
 
@@ -200,12 +200,6 @@
             #binding-cells = <0>;
             bindings = <&macro_u_accent>;
         };
-
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_enye>;
-        };
     };
 
     keymap {
@@ -216,17 +210,17 @@
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
                 &kp ESC
-                &kp H
+                &kp B
                 &kp G
                 &kp M
                 &kp U
-                &kp U
+                &kp H
             // ----------  Mano derecha - Fila 1  ----------
-                &kp U
+                &kp Q
                 &kp D
                 &kp V
                 &kp P
-                &kp Q
+                &kp F
                 &spotlight
             // ----------  Mano izquierda - Fila 2  ----------
                 &kp TAB
@@ -246,16 +240,16 @@
                 &kp LSHFT
                 &kp X
                 &kp W
+                &kp W
                 &kp J
-                &kp B
-                &enye
+                &.
             // ----------  Mano derecha - Fila 3  ----------
-                &kp U
-                &kp F
+                &kp DOLLAR 
                 &kp Y
                 &kp K
                 &kp Z
-                &kp RIGHT_SHIFT
+                &ene_letter 
+                &kp RSHFT
             // ----------  Pulgares 1  ----------
                 &kp LGUI
                 &mo 1
