@@ -51,8 +51,6 @@
             tap-ms = <10>;
         };
 
-
-
         // Símbolos con Shift para macOS - Fila 1
         exclamation: exclamation {
             compatible = "zmk,behavior-macro";
@@ -756,106 +754,109 @@
         default_layer {
             display-name = "Default Layer";
             bindings = <
-            // ----------  Mano izquierda - Fila 1  ----------
+            // Left hand - Row 1
                 &kp ESC
                 &kp H
                 &kp G
                 &kp M
                 &u_accent 0 0
                 &kp B
-            // ----------  Mano derecha - Fila 1  ----------
+            // Right hand - Row 1
                 &kp F
                 &kp D
                 &kp V
                 &kp P
                 &kp Q
                 &kp BACKSPACE
-            // ----------  Mano izquierda - Fila 2  ----------
+            // Left hand - Row 2
                 &kp TAB
                 &i_accent 0 0
                 &n_enye 0 0
                 &kp R
                 &a_accent 0 0
                 &kp T
-            // ----------  Mano derecha - Fila 2  ----------
+            // Right hand - Row 2
                 &kp L
                 &e_accent 0 0
                 &o_accent 0 0
                 &kp S
                 &kp C
                 &colon_semicolon 0 0
-            // ----------  Mano izquierda - Fila 3  ----------
+            // Left hand - Row 3
                 &kp LSHIFT
                 &question_marks 0 0
                 &kp X
                 &kp W
                 &kp J
                 &quote_marks 0 0
-            // ----------  Mano derecha - Fila 3  ----------
+            // Right hand - Row 3
                 &comma_dot 0 0
                 &kp Y
                 &kp K
                 &kp Z
                 &minus_underscore 0 0
                 &kp RSHIFT
-            // ----------  Pulgares 1  ----------
+            // Thumbs - Left
                 &gui_key
                 &mo 1
                 &kp SPACE
-            // ----------  Pulgares 2  ----------
+            // Thumbs - Right
                 &kp ENTER
                 &mo 2
-                &kp spootlight
+                &spootlight
             >;
         };
 
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
-            // ----------  Fila 1  ----------
+            // Left hand - Row 1
                 &mc0
                 &exclamation_marks 0 0
                 &at_sym
                 &hash_sym
                 &dollar
                 &percent_sym
+            // Right hand - Row 1
                 &question
                 &ampersand
                 &caret_sym
                 &pipe_sym
                 &plus_sym
                 &minus_underscore 0 0
-            // ----------  Fila 2  ----------
+            // Left hand - Row 2
                 &kp TAB
                 &kp N1
                 &kp N2
                 &kp N3
                 &kp N4
                 &kp N5
+            // Right hand - Row 2
                 &kp N6
                 &kp N7
                 &kp N8
                 &kp N9
                 &kp N0
                 &equal_sym
-            // ----------  Fila 3  ----------
+            // Left hand - Row 3
                 &tilde_sym
                 &grave_sym
                 &less_than
                 &left_brace
                 &left_paren
                 &left_bracket
+            // Right hand - Row 3
                 &right_bracket
                 &right_paren
                 &right_brace
                 &greater_than
                 &multiply_sym
                 &slash_backslash 0 0
-            // ----------  Pulgares 1  ----------
+            // Thumbs - Left
                 &gui_key
                 &mo 1
                 &kp SPACE
-            // ----------  Pulgares 2  ----------
+            // Thumbs - Right
                 &kp ENTER
                 &mo 2
                 &kp spootlight
@@ -865,50 +866,53 @@
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
-            // ----------  Fila 1  ----------
+            // Left hand - Row 1
                 &mc1
                 &mc2
                 &mc3
                 &mc4
                 &mc5
                 &mc6
+            // Right hand - Row 1
                 &mc7
                 &mc8
                 &mc9
                 &mc10
                 &mc11
                 &mc12
-            // ----------  Fila 2  ----------
+            // Left hand - Row 2
                 &none
                 &none
                 &none
                 &none
                 &none
                 &none
+            // Right hand - Row 2
                 &none
                 &none
                 &none
                 &none
                 &none
                 &none
-            // ----------  Fila 3  ----------
+            // Left hand - Row 3
                 &none
                 &none
                 &none
                 &none
                 &none
                 &none
+            // Right hand - Row 3
                 &none
                 &none
                 &none
                 &none
                 &none
                 &none
-            // ----------  Fila 1  ----------
+            // Thumbs - Left
                 &none
                 &none
                 &none
-            // ----------  Fila 1  ----------
+            // Thumbs - Right
                 &none
                 &none
                 &none
