@@ -813,7 +813,7 @@
                 &dollar
                 &percent_sym
             // Right hand - Row 1
-                &macro_question
+                &question
                 &ampersand
                 &caret_sym
                 &pipe_sym
