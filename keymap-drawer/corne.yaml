@@ -1,69 +1,116 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Default Layer: [ESC, B, G, M, U, H, Q, D, V, P, F, BACKSPACE, TAB, T, N, R, A, I, C, E, O, S, L, '&enye', LSHFT, '''', X, W, J, ',', ., Y, K, Z, ;, RSHFT, LGUI,
-    Raise Layer, SPACE, ENTER, Lower Layer, '&spootlight']
-  Raise Layer:
-  - '!'
+  Default Layer:
+  - M
+  - M
+  - {t: A, h: '&macro_a_accent'}
+  - M
+  - U
+  - H
+  - Q
+  - D
+  - V
+  - P
+  - F
+  - BACKSPACE
+  - ↹
+  - T
+  - N
+  - R
+  - A
+  - I
+  - C
+  - E
+  - O
+  - S
+  - L
+  - '&enye'
+  - $$mdi:apple-keyboard-shift$$
   - ''''
-  - '#'
-  - $
-  - PERC
-  - (
-  - )
-  - '&'
+  - X
+  - W
+  - J
+  - ','
+  - .
+  - Y
+  - K
+  - Z
+  - ;
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-command$$
+  - Raise Layer
+  - ␣
+  - ENTER
+  - Lower Layer
+  - '&spootlight'
+  Raise Layer:
+  - '&exclamation'
+  - ''''
+  - '&hash_sym'
+  - '&dollar'
+  - '&percent_sym'
+  - '&left_paren'
+  - '&right_paren'
+  - '&ampersand'
   - /
   - '='
-  - '?'
-  - '|'
+  - '&question'
+  - '&pipe_sym'
   - '1'
   - '2'
   - '3'
   - '4'
   - '5'
-  - LCBR
-  - RCBR
+  - '{'
+  - '}'
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
-  - '@'
+  - '&at_sym'
   - '`'
   - \
-  - '~'
-  - ^
+  - '&tilde_sym'
+  - '&caret_sym'
   - '{'
   - '}'
-  - +
+  - '&plus_sym'
   - '-'
-  - '*'
-  - _
-  - ':'
-  - LGUI
+  - '&star_sym'
+  - '&underscore'
+  - '&colon_sym'
+  - $$mdi:apple-keyboard-command$$
   - {t: Raise Layer, type: held}
-  - SPACE
+  - ␣
   - ENTER
   - Lower Layer
   - '&spootlight'
   Lower Layer:
-  - VOLUME UP
-  - VOLUME DOWN
-  - PLAY PAUSE
-  - BRIGHTNESS INC
-  - BRIGHTNESS DEC
-  - NEXT
-  - PREV
-  - AC SEARCH
-  - AC DESKTOP SHOW ALL WINDOWS
-  - AC DESKTOP SHOW ALL APPLICATIONS
-  - AC NEXT KEYBOARD LAYOUT SELECT
-  - CUT
-  - COPY
-  - PASTE
+  - Ctl+BRIGHTNESS INC
+  - Ctl+VOLUME DOWN
+  - Ctl+PLAY PAUSE
+  - Ctl+BRIGHTNESS INC
+  - Ctl+BRIGHTNESS DEC
+  - Ctl+⏭️
+  - Ctl+⏮️
+  - Ctl+AC SEARCH
+  - Ctl+AC DESKTOP SHOW ALL WINDOWS
+  - Ctl+AC DESKTOP SHOW ALL APPLICATIONS
+  - Ctl+AC NEXT KEYBOARD LAYOUT SELECT
+  - Ctl+CUT
+  - Ctl+COPY
+  - Ctl+PASTE
   - '2'
   - '3'
   - '4'
   - '5'
+  - LEFT ARROW
+  - DOWN ARROW
+  - UP ARROW
+  - RIGHT ARROW
+  - '1'
+  - '3'
   - '&vol_up'
   - '1'
   - '2'
@@ -76,15 +123,9 @@ layers:
   - '3'
   - '4'
   - '5'
-  - '&vol_up'
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - LGUI
+  - $$mdi:apple-keyboard-command$$
   - {t: ▽, type: trans}
-  - SPACE
-  - RET
+  - ␣
+  - ⏎
   - {type: held}
-  - RALT
+  - $$mdi:apple-keyboard-option$$
