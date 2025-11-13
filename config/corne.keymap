@@ -318,10 +318,10 @@
         a_accent: a_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";           
-            tapping-term-ms = <200>;            
-            quick-tap-ms = <0>;                 // ⭐ CAMBIO: Elimina el doble tap
-            require-prior-idle-ms = <125>;      
+            flavor = "balanced";                // ⭐ CAMBIO CLAVE
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;               // ⭐ Restaurado para permitir repetición rápida
+            require-prior-idle-ms = <125>;
             bindings = <&macro_a_accent>, <&kp>;
         };
 
@@ -357,8 +357,8 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &macro_a_accent
-                &a_accent 0 A
+                &kp M
+                &kp M
                 &a_accent 0 A
                 &kp M
                 &kp U
