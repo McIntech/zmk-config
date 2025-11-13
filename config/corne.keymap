@@ -258,11 +258,11 @@
             bindings = <&kp U>;
         };
 
-        // Tus macros de acentos ya existentes
+        // Macros para HOLD (letra con acento)
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -273,7 +273,7 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -284,7 +284,7 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -295,7 +295,7 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -306,7 +306,7 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
+            bindings = 
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -328,16 +328,16 @@
         e_accent: e_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&macro_e_accent>, <&macro_tap_e>;
         };
 
         i_accent: i_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&macro_i_accent>, <&macro_tap_i>;
         };
 
@@ -346,15 +346,14 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            retro-tap;
             bindings = <&macro_o_accent>, <&macro_tap_o>;
         };
 
         u_accent: u_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
             bindings = <&macro_u_accent>, <&macro_tap_u>;
         };
     };
