@@ -323,6 +323,96 @@
             tap-ms = <10>;
         };
 
+        // Macro para TAP (dos puntos :)
+        macro_tap_colon: macro_tap_colon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SEMICOLON
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para HOLD (punto y coma ;)
+        macro_semicolon: macro_semicolon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>;
+        };
+
+        // Macro para TAP (signo de interrogación de apertura ¿)
+        macro_tap_inverted_question: macro_tap_inverted_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp FSLH
+                &macro_release &kp LALT
+            >;
+        };
+
+        // Macro para HOLD (signo de interrogación ?)
+        macro_question: macro_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp FSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para TAP (comilla simple ')
+        macro_tap_single_quote: macro_tap_single_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>;
+        };
+
+        // Macro para HOLD (comilla doble ")
+        macro_double_quote: macro_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SINGLE_QUOTE
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para TAP (coma ,)
+        macro_tap_comma: macro_tap_comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>;
+        };
+
+        // Macro para HOLD (punto .)
+        macro_dot: macro_dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>;
+        };
+
+        // Macro para TAP (guion -)
+        macro_tap_minus: macro_tap_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>;
+        };
+
+        // Macro para HOLD (guion bajo _)
+        macro_underscore: macro_underscore {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LSHIFT
+                &macro_tap &kp MINUS
+                &macro_release &kp LSHIFT
+            >;
+        };
+
     };
 
     behaviors {
@@ -373,6 +463,47 @@
             tapping-term-ms = <200>;
             bindings = <&enye>, <&macro_tap_n>;
         };
+
+        colon_semicolon: colon_semicolon {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_semicolon>, <&macro_tap_colon>;
+        };
+
+        question_marks: question_marks {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_question>, <&macro_tap_inverted_question>;
+        };
+
+        quote_marks: quote_marks {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_double_quote>, <&macro_tap_single_quote>;
+        };
+
+        comma_dot: comma_dot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_dot>, <&macro_tap_comma>;
+        };
+
+        minus_underscore: minus_underscore {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_underscore>, <&macro_tap_minus>;
+        };
+        
     };
 
     keymap {
@@ -382,55 +513,55 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &a_accent 0 0
-                &e_accent 0 0
-                &i_accent 0 0
-                &o_accent 0 0
+                &kp ESC
+                &kp H
+                &kp G
+                &kp M
                 &u_accent 0 0
-                &n_enye 0 0
+                &kp B
             // ----------  Mano derecha - Fila 1  ----------
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &kp F
+                &kp D
+                &kp V
+                &kp P
+                &kp Q
+                &kp BACKSPACE
             // ----------  Mano izquierda - Fila 2  ----------
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &kp TAB
+                &i_accent 0 0
+                &n_enye 0 0
+                &kp R
+                &a_accent 0 0
+                &kp T
             // ----------  Mano derecha - Fila 2  ----------
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &kp L
+                &e_accent 0 0
+                &o_accent 0 0
+                &kp S
+                &kp C
+                &colon_semicolon 0 0
             // ----------  Mano izquierda - Fila 3  ----------
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &kp LSHIFT
+                &question_marks 0 0
+                &kp X
+                &kp W
+                &kp J
+                &quote_marks 0 0
             // ----------  Mano derecha - Fila 3  ----------
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &comma_dot 0 0
+                &kp Y
+                &kp K
+                &kp Z
+                &minus_underscore 0 0
+                &kp RSHIFT
             // ----------  Pulgares 1  ----------
-                &none
-                &none
-                &none
+                &LGUI
+                &mo 1
+                &kp SPACE
             // ----------  Pulgares 2  ----------
-                &none
-                &none
-                &none
+                &kp ENTER
+                &mo 2
+                &kp spootlight
             >;
         };
 
