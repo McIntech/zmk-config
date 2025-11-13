@@ -804,11 +804,11 @@
                 &i_accent 0 0
                 &n_enye 0 0
                 &kp R
-                &e_accent 0 0
+                &a_accent 0 0
                 &kp T
             // Right hand - Row 2
                 &kp L
-                &a_accent 0 0
+                &e_accent 0 0
                 &o_accent 0 0
                 &kp S
                 &kp C
