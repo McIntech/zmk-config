@@ -262,7 +262,7 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -273,7 +273,7 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -284,7 +284,7 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -295,7 +295,7 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -306,7 +306,7 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
