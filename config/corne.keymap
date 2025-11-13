@@ -47,8 +47,8 @@
                 &macro_tap &kp E
                 &macro_release &kp LALT
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <20>;
         };
 
         // Símbolos con Shift para macOS - Fila 1
@@ -396,8 +396,8 @@
                 &macro_release &kp LALT
                 &macro_tap &kp N
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <20>;
         };
 
         // Macro para TAP (dos puntos :)
@@ -507,7 +507,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_exclamation>, <&macro_tap_inverted_exclamation>;
         };
 
@@ -536,7 +536,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_backslash>, <&macro_tap_slash>;
         };
 
@@ -559,8 +559,8 @@
             bindings = <
                 &macro_tap &kp C_BRIGHTNESS_DEC
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC2 - Subir brillo
@@ -570,8 +570,8 @@
             bindings = <
                 &macro_tap &kp C_BRIGHTNESS_INC
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC3 - Exposé (mostrar todas las apps)
@@ -603,8 +603,8 @@
             bindings = <
                 &macro_tap &kp C_MUTE
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC6 - No molestar (Focus)
@@ -627,8 +627,8 @@
             bindings = <
                 &macro_tap &kp C_PREV
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC8 - Play/Pause
@@ -638,8 +638,8 @@
             bindings = <
                 &macro_tap &kp C_PLAY_PAUSE
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC9 - Canción siguiente
@@ -649,8 +649,8 @@
             bindings = <
                 &macro_tap &kp C_NEXT
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC10 - Silenciar volumen
@@ -660,8 +660,8 @@
             bindings = <
                 &macro_tap &kp C_MUTE
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC11 - Bajar volumen
@@ -671,8 +671,8 @@
             bindings = <
                 &macro_tap &kp C_VOL_DN
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
         // MC12 - Subir volumen
@@ -682,8 +682,8 @@
             bindings = <
                 &macro_tap &kp C_VOL_UP
             >;
-            wait-ms = <30>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <25>;
         };
 
     };
@@ -693,7 +693,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_a_accent>, <&macro_tap_a>;
         };
 
@@ -701,7 +701,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_e_accent>, <&macro_tap_e>;
         };
 
@@ -709,7 +709,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_i_accent>, <&macro_tap_i>;
         };
 
@@ -717,7 +717,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_o_accent>, <&macro_tap_o>;
         };
 
@@ -725,7 +725,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_u_accent>, <&macro_tap_u>;
         };
 
@@ -733,7 +733,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&enye>, <&macro_tap_n>;
         };
 
@@ -741,7 +741,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_semicolon>, <&macro_tap_colon>;
         };
 
@@ -749,7 +749,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_question>, <&macro_tap_inverted_question>;
         };
 
@@ -757,7 +757,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_double_quote>, <&macro_tap_single_quote>;
         };
 
@@ -765,7 +765,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_dot>, <&macro_tap_comma>;
         };
 
@@ -773,7 +773,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&macro_underscore>, <&macro_tap_minus>;
         };
         
