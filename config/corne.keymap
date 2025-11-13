@@ -292,13 +292,6 @@
             bindings = <&kp GRAVE>;
         };
 
-        // Macro para GUI (Command en macOS)
-        gui_key: gui_key {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LGUI>;
-        };
-
         // Macros para TAP (letra normal)
         macro_tap_a: macro_tap_a {
             compatible = "zmk,behavior-macro";
@@ -430,9 +423,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
+                &macro_press &kp LSHIFT
                 &macro_press &kp LALT
                 &macro_tap &kp FSLH
                 &macro_release &kp LALT
+                &macro_release &kp LSHIFT
             >;
         };
 
@@ -797,7 +792,7 @@
                 &minus_underscore 0 0
                 &kp RSHIFT
             // Thumbs - Left
-                &gui_key
+                &LGUI
                 &mo 1
                 &kp SPACE
             // Thumbs - Right
@@ -853,7 +848,7 @@
                 &multiply_sym
                 &slash_backslash 0 0
             // Thumbs - Left
-                &gui_key
+                &LGUI
                 &mo 1
                 &kp SPACE
             // Thumbs - Right
