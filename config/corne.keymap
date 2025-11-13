@@ -318,9 +318,8 @@
         a_accent: a_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";           // ⭐ VOLVER a tap-preferred
+            flavor = "tap-preferred";
             tapping-term-ms = <180>;
-            // NO incluir quick-tap-ms
             require-prior-idle-ms = <100>;
             bindings = <&macro_a_accent>, <&kp>;
         };
