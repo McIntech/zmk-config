@@ -315,51 +315,39 @@
     };
 
     behaviors {
-        // Método 1: HOLD para acento (más natural)
         a_accent: a_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&macro_a_accent>, <&kp>;
+            bindings = <&kp A>, <&kp A>, <&macro_a_accent>;
         };
 
-        // Método 2: BALANCED (detecta siguiente tecla)
         e_accent: e_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <180>;
-            bindings = <&macro_e_accent>, <&kp>;
-        };
-
-        // Método 3: HOLD-PREFERRED (más agresivo con acento)
-        i_accent: i_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&macro_i_accent>, <&kp>;
-        };
-
-        // Método 4: TAP-PREFERRED + RETRO-TAP (registra al soltar)
-        o_accent: o_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            retro-tap;
-            bindings = <&macro_o_accent>, <&kp>;
+            bindings = <&kp E>, <&kp E>, <&macro_e_accent>;
         };
 
-        // Método 5: BALANCED + GLOBAL-QUICK-TAP
+        i_accent: i_accent {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp I>, <&kp I>, <&macro_i_accent>;
+        };
+
+        o_accent: o_accent {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp O>, <&kp O>, <&macro_o_accent>;
+        };
+
         u_accent: u_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <175>;
-            global-quick-tap;
-            bindings = <&macro_u_accent>, <&kp>;
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp U>, <&kp U>, <&macro_u_accent>;
         };
     };
 
@@ -370,11 +358,11 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &a_accent 0 A
-                &e_accent 0 E
-                &i_accent 0 I
-                &o_accent 0 O
-                &u_accent 0 U
+                &a_accent
+                &e_accent
+                &i_accent
+                &o_accent
+                &u_accent
                 &none
             // ----------  Mano derecha - Fila 1  ----------
                 &none
