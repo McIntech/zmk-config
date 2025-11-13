@@ -51,19 +51,7 @@
             tap-ms = <10>;
         };
 
-        // tecla ñ
-        enye: enye {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp N
-                &macro_release &kp LALT
-                &macro_tap &kp N
-            >;
-            wait-ms = <10>;
-            tap-ms = <10>;
-        };
+
 
         // Símbolos con Shift para macOS - Fila 1
         exclamation: exclamation {
@@ -314,6 +302,27 @@
             >;
         };
 
+        // Macro para TAP (letra n normal)
+        macro_tap_n: macro_tap_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N>;
+        };
+
+        // Macro para HOLD (letra ñ)
+        enye: enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp N
+                &macro_release &kp LALT
+                &macro_tap &kp N
+            >;
+            wait-ms = <10>;
+            tap-ms = <10>;
+        };
+
     };
 
     behaviors {
@@ -356,6 +365,14 @@
             tapping-term-ms = <200>;
             bindings = <&macro_u_accent>, <&macro_tap_u>;
         };
+
+        n_enye: n_enye {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&enye>, <&macro_tap_n>;
+        };
     };
 
     keymap {
@@ -370,7 +387,7 @@
                 &i_accent 0 0
                 &o_accent 0 0
                 &u_accent 0 0
-                &enye
+                &n_enye 0 0
             // ----------  Mano derecha - Fila 1  ----------
                 &none
                 &none
