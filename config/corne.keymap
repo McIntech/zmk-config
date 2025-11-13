@@ -792,7 +792,7 @@
                 &minus_underscore 0 0
                 &kp RSHIFT
             // Thumbs - Left
-                &LGUI
+                &kp LGUI
                 &mo 1
                 &kp SPACE
             // Thumbs - Right
@@ -813,7 +813,7 @@
                 &dollar
                 &percent_sym
             // Right hand - Row 1
-                &question
+                &macro_question
                 &ampersand
                 &caret_sym
                 &pipe_sym
@@ -848,7 +848,7 @@
                 &multiply_sym
                 &slash_backslash 0 0
             // Thumbs - Left
-                &LGUI
+                &kp LGUI
                 &mo 1
                 &kp SPACE
             // Thumbs - Right
