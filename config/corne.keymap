@@ -320,7 +320,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <50>;      // ⭐ Muy bajo (50ms)
+            quick-tap-ms = <125>;              // ⭐ Añadir de nuevo pero más bajo
             bindings = <&macro_a_accent>, <&kp>;
         };
 
