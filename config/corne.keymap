@@ -312,42 +312,135 @@
             >;
         };
 
+        // Macros para TAP (letra normal)
+        macro_tap_a: macro_tap_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A>;
+        };
+
+        macro_tap_e: macro_tap_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E>;
+        };
+
+        macro_tap_i: macro_tap_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I>;
+        };
+
+        macro_tap_o: macro_tap_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O>;
+        };
+
+        macro_tap_u: macro_tap_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U>;
+        };
+
+        // Tus macros de acentos ya existentes
+        macro_a_accent: macro_a_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp A
+            >;
+        };
+
+        macro_e_accent: macro_e_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp E
+            >;
+        };
+
+        macro_i_accent: macro_i_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp I
+            >;
+        };
+
+        macro_o_accent: macro_o_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp O
+            >;
+        };
+
+        macro_u_accent: macro_u_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp U
+            >;
+        };
+
     };
 
     behaviors {
         a_accent: a_accent {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp A>, <&kp A>, <&macro_a_accent>;
+            bindings = <&macro_a_accent>, <&macro_tap_a>;
         };
 
         e_accent: e_accent {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp E>, <&kp E>, <&macro_e_accent>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            bindings = <&macro_e_accent>, <&macro_tap_e>;
         };
 
         i_accent: i_accent {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp I>, <&kp I>, <&macro_i_accent>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&macro_i_accent>, <&macro_tap_i>;
         };
 
         o_accent: o_accent {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp O>, <&kp O>, <&macro_o_accent>;
+            retro-tap;
+            bindings = <&macro_o_accent>, <&macro_tap_o>;
         };
 
         u_accent: u_accent {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp U>, <&kp U>, <&macro_u_accent>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <175>;
+            bindings = <&macro_u_accent>, <&macro_tap_u>;
         };
     };
 
