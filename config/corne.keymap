@@ -370,11 +370,11 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &td_a
-                &td_e
-                &td_i
-                &td_o
-                &td_u
+                &a_accent 0 A
+                &e_accent 0 E
+                &i_accent 0 I
+                &o_accent 0 O
+                &u_accent 0 U
                 &none
             // ----------  Mano derecha - Fila 1  ----------
                 &none
