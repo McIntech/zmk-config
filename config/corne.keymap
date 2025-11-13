@@ -47,8 +47,8 @@
                 &macro_tap &kp E
                 &macro_release &kp LALT
             >;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // Símbolos con Shift para macOS - Fila 1
@@ -396,8 +396,8 @@
                 &macro_release &kp LALT
                 &macro_tap &kp N
             >;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // Macro para TAP (dos puntos :)
