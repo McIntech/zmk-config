@@ -315,50 +315,39 @@
     };
 
     behaviors {
-        a_accent: a_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
+        td_a: tap_dance_a {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp A>, <&macro_a_accent>;
         };
 
-        e_accent: e_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
+        td_e: tap_dance_e {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <180>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp E>, <&macro_e_accent>;
         };
 
-        i_accent: i_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+        td_i: tap_dance_i {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp I>, <&macro_i_accent>;
         };
 
-        o_accent: o_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
+        td_o: tap_dance_o {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp O>, <&macro_o_accent>;
         };
 
-        u_accent: u_accent {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&kp>;
+        td_u: tap_dance_u {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp U>, <&macro_u_accent>;
         };
     };
 
@@ -369,11 +358,11 @@
             display-name = "Default Layer";
             bindings = <
             // ----------  Mano izquierda - Fila 1  ----------
-                &a_accent A A
-                &e_accent E E  
-                &i_accent I I
-                &o_accent O O
-                &u_accent U U
+                &td_a
+                &td_e
+                &td_i
+                &td_o
+                &td_u
                 &none
             // ----------  Mano derecha - Fila 1  ----------
                 &none
