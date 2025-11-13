@@ -315,39 +315,51 @@
     };
 
     behaviors {
-        td_a: tap_dance_a {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+        // Método 1: HOLD para acento (más natural)
+        a_accent: a_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp A>, <&macro_a_accent>;
+            bindings = <&macro_a_accent>, <&kp>;
         };
 
-        td_e: tap_dance_e {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+        // Método 2: BALANCED (detecta siguiente tecla)
+        e_accent: e_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
             tapping-term-ms = <180>;
-            bindings = <&kp E>, <&macro_e_accent>;
+            bindings = <&macro_e_accent>, <&kp>;
         };
 
-        td_i: tap_dance_i {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+        // Método 3: HOLD-PREFERRED (más agresivo con acento)
+        i_accent: i_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&kp I>, <&macro_i_accent>;
+            bindings = <&macro_i_accent>, <&kp>;
         };
 
-        td_o: tap_dance_o {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+        // Método 4: TAP-PREFERRED + RETRO-TAP (registra al soltar)
+        o_accent: o_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp O>, <&macro_o_accent>;
+            retro-tap;
+            bindings = <&macro_o_accent>, <&kp>;
         };
 
-        td_u: tap_dance_u {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp U>, <&macro_u_accent>;
+        // Método 5: BALANCED + GLOBAL-QUICK-TAP
+        u_accent: u_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <175>;
+            global-quick-tap;
+            bindings = <&macro_u_accent>, <&kp>;
         };
     };
 
