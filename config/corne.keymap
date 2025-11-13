@@ -556,14 +556,22 @@
         mc1: mc1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_BRIGHTNESS_DEC>;
+            bindings = <
+                &macro_tap &kp C_BRIGHTNESS_DEC
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC2 - Subir brillo
         mc2: mc2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_BRIGHTNESS_INC>;
+            bindings = <
+                &macro_tap &kp C_BRIGHTNESS_INC
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC3 - Exposé (mostrar todas las apps)
@@ -592,7 +600,11 @@
         mc5: mc5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_MUTE>;
+            bindings = <
+                &macro_tap &kp C_MUTE
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC6 - No molestar (Focus)
@@ -612,42 +624,66 @@
         mc7: mc7 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_PREV>;
+            bindings = <
+                &macro_tap &kp C_PREV
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC8 - Play/Pause
         mc8: mc8 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_PLAY_PAUSE>;
+            bindings = <
+                &macro_tap &kp C_PLAY_PAUSE
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC9 - Canción siguiente
         mc9: mc9 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_NEXT>;
+            bindings = <
+                &macro_tap &kp C_NEXT
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC10 - Silenciar volumen
         mc10: mc10 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_MUTE>;
+            bindings = <
+                &macro_tap &kp C_MUTE
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC11 - Bajar volumen
         mc11: mc11 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>;
+            bindings = <
+                &macro_tap &kp C_VOL_DN
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
         // MC12 - Subir volumen
         mc12: mc12 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>;
+            bindings = <
+                &macro_tap &kp C_VOL_UP
+            >;
+            wait-ms = <30>;
+            tap-ms = <40>;
         };
 
     };
