@@ -318,10 +318,10 @@
         a_accent: a_accent {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";                // ⭐ CAMBIO CLAVE
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;               // ⭐ Restaurado para permitir repetición rápida
-            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            // quick-tap-ms = <200>;            // ⭐ ELIMINAR esta línea completamente
+            require-prior-idle-ms = <100>;
             bindings = <&macro_a_accent>, <&kp>;
         };
 
