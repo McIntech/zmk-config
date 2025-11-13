@@ -787,44 +787,44 @@
             bindings = <
             // Left hand - Row 1
                 &kp ESC
-                &kp H
-                &kp G
-                &kp M
-                &u_accent 0 0
-                &kp B
-            // Right hand - Row 1
-                &kp F
-                &kp D
-                &kp V
-                &kp P
                 &kp Q
+                &kp W
+                &kp E
+                &kp R
+                &kp T
+            // Right hand - Row 1
+                &kp Y
+                &kp U
+                &kp I
+                &kp O
+                &kp P
                 &kp BACKSPACE
             // Left hand - Row 2
                 &kp TAB
-                &i_accent 0 0
-                &n_enye 0 0
-                &kp R
-                &a_accent 0 0
-                &kp T
-            // Right hand - Row 2
-                &kp L
-                &e_accent 0 0
-                &o_accent 0 0
+                &kp A
                 &kp S
-                &kp C
+                &kp D
+                &kp F
+                &kp G
+            // Right hand - Row 2
+                &kp H
+                &kp J
+                &kp K
+                &kp L
+                &enye
                 &colon_semicolon 0 0
             // Left hand - Row 3
                 &kp LSHIFT
                 &question_marks 0 0
-                &kp X
-                &kp W
-                &kp J
+                &kp z
+                &kp x
+                &kp c
                 &quote_marks 0 0
             // Right hand - Row 3
                 &comma_dot 0 0
-                &kp Y
-                &kp K
-                &kp Z
+                &kp v
+                &kp b
+                &kp m
                 &minus_underscore 0 0
                 &kp RSHIFT
             // Thumbs - Left
