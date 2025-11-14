@@ -19,25 +19,315 @@
 };
 
 / {
-    macros {
-        // SPOTLIGHT - Sin delays
-        spotlight: spotlight {
+        macros {
+
+        vol_up: vol_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LGUI
-                &macro_tap &kp SPACE
-                &macro_release &kp LGUI
+            bindings = <
+                &macro_tap &kp C_VOL_UP
             >;
         };
 
-        // ACENTOS - Con delays mínimos solo donde macOS lo requiere
-        accent_a: accent_a {
+        spootlight: spootlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
+			    &macro_press &kp LGUI      // 1. Presiona ⌘ (Command)
+			    &macro_tap   &kp SPACE     // 2. Toca SPACE mientras ⌘ sigue presionado
+			    &macro_release &kp LGUI    // 3. Suelta ⌘ (Command)
+            >;
+        };
+
+        accent_dead: accent_dead {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+            >;
+            wait-ms = <20>;
+            tap-ms = <20>;
+        };
+
+        // Símbolos con Shift para macOS - Fila 1
+        exclamation: exclamation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N1
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        hash_sym: hash_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N3
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        dollar: dollar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N4
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        percent_sym: percent_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N5
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        ampersand: ampersand {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N7
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        left_paren: left_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N9
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        right_paren: right_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N0
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        question: question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp FSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        pipe_sym: pipe_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp BSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Símbolos con Shift para macOS - Fila 3
+        at_sym: at_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N2
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        tilde_sym: tilde_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp GRAVE
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        caret_sym: caret_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N6
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        plus_sym: plus_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp EQUAL
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        star_sym: star_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N8
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        underscore: underscore {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp MINUS
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        colon_sym: colon_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SEMICOLON
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para < (menor que)
+        less_than: less_than {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp COMMA
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para > (mayor que)
+        greater_than: greater_than {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp DOT
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para = (igual)
+        equal_sym: equal_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>;
+        };
+
+        // Macro para [ (corchete izquierdo)
+        left_bracket: left_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>;
+        };
+
+        // Macro para ] (corchete derecho)
+        right_bracket: right_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>;
+        };
+
+        // Macro para { (llave izquierda)
+        left_brace: left_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp LBKT
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para } (llave derecha)
+        right_brace: right_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp RBKT
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para * (multiplicación)
+        multiply_sym: multiply_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&star_sym>;
+        };
+
+        // Macro para ` (acento grave)
+        grave_sym: grave_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>;
+        };
+
+        // Macros para TAP (letra normal)
+        macro_tap_a: macro_tap_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A>;
+        };
+
+        macro_tap_e: macro_tap_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E>;
+        };
+
+        macro_tap_i: macro_tap_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I>;
+        };
+
+        macro_tap_o: macro_tap_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O>;
+        };
+
+        macro_tap_u: macro_tap_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U>;
+        };
+
+        // Macros para HOLD (letra con acento)
+        macro_a_accent: macro_a_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -45,12 +335,10 @@
             >;
         };
 
-        accent_e: accent_e {
+        macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -58,12 +346,10 @@
             >;
         };
 
-        accent_i: accent_i {
+        macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -71,12 +357,10 @@
             >;
         };
 
-        accent_o: accent_o {
+        macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -84,12 +368,10 @@
             >;
         };
 
-        accent_u: accent_u {
+        macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
                 &macro_release &kp LALT
@@ -97,251 +379,574 @@
             >;
         };
 
+        // Macro para TAP (letra n normal)
+        macro_tap_n: macro_tap_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N>;
+        };
+
+        // Macro para HOLD (letra ñ)
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <10>;
-            bindings = 
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
                 &macro_release &kp LALT
                 &macro_tap &kp N
             >;
+            wait-ms = <20>;
+            tap-ms = <20>;
         };
 
-        // SIGNOS INVERTIDOS - Sin delays
-        inv_question: inv_question {
+        // Macro para TAP (dos puntos :)
+        macro_tap_colon: macro_tap_colon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LSHIFT &kp LALT
-                &macro_tap &kp FSLH
-                &macro_release &kp LALT &kp LSHIFT
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SEMICOLON
+                &macro_release &kp LSHIFT
             >;
         };
 
-        inv_exclaim: inv_exclaim {
+        // Macro para HOLD (punto y coma ;)
+        macro_semicolon: macro_semicolon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
+            bindings = <&kp SEMICOLON>;
+        };
+
+        // Macro para TAP (signo de interrogación de apertura ¿)
+        macro_tap_inverted_question: macro_tap_inverted_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_press &kp LALT
+                &macro_tap &kp FSLH
+                &macro_release &kp LALT
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para HOLD (signo de interrogación ?)
+        macro_question: macro_question {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp FSLH
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para TAP (comilla simple ')
+        macro_tap_single_quote: macro_tap_single_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>;
+        };
+
+        // Macro para HOLD (comilla doble ")
+        macro_double_quote: macro_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp SINGLE_QUOTE
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        // Macro para TAP (coma ,)
+        macro_tap_comma: macro_tap_comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>;
+        };
+
+        // Macro para HOLD (punto .)
+        macro_dot: macro_dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>;
+        };
+
+        // Macro para TAP (guion -)
+        macro_tap_minus: macro_tap_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>;
+        };
+
+        // Macro para HOLD (guion bajo _)
+        macro_underscore: macro_underscore {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp MINUS
+                &macro_release &kp LSHIFT
+            >;
+        };
+
+        mc0: mc0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LCTRL
+                &macro_tap &kp C
+                &macro_release &kp LCTRL
+            >;
+        };
+
+        // ¡ / ! (exclamación invertida / exclamación)
+        exclamation_marks: exclamation_marks {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_exclamation>, <&macro_tap_inverted_exclamation>;
+        };
+
+        macro_tap_inverted_exclamation: macro_tap_inverted_exclamation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N1
                 &macro_release &kp LALT
             >;
         };
 
-        // MEDIA CONTROLS - Sin delays  
-        vol_down: vol_down {
+        macro_exclamation: macro_exclamation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>;
+            bindings = <
+                &macro_press &kp LSHIFT
+                &macro_tap &kp N1
+                &macro_release &kp LSHIFT
+            >;
         };
 
-        vol_up: vol_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>;
-        };
-
-        play_pause: play_pause {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_PP>;
-        };
-
-        prev_track: prev_track {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_PREV>;
-        };
-
-        next_track: next_track {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_NEXT>;
-        };
-
-        bright_down: bright_down {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_BRI_DN>;
-        };
-
-        bright_up: bright_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C_BRI_UP>;
-        };
-    };
-
-    behaviors {
-        // HOME ROW MODS - Optimizado para no interferir con escritura
-        hm: hm {
+        // / \ (slash / backslash)
+        slash_backslash: slash_backslash {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&macro_backslash>, <&macro_tap_slash>;
         };
 
-        // LAYER TAP - Para cambiar capas desde pulgares
-        lt: lt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&mo>, <&kp>;
+        macro_tap_slash: macro_tap_slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>;
         };
+
+        macro_backslash: macro_backslash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>;
+        };
+
+        // MC1 - Bajar brillo
+        mc1: mc1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_BRIGHTNESS_DEC
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC2 - Subir brillo
+        mc2: mc2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_BRIGHTNESS_INC
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC3 - Exposé (mostrar todas las apps)
+        mc3: mc3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LCTRL
+                &macro_tap &kp UP
+                &macro_release &kp LCTRL
+            >;
+        };
+
+        // MC4 - Spotlight (ya lo tienes como 'spootlight')
+        mc4: mc4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LGUI
+                &macro_tap &kp SPACE
+                &macro_release &kp LGUI
+            >;
+        };
+
+        // MC5 - Micrófono mute/unmute
+        mc5: mc5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_MUTE
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC6 - No molestar (Focus)
+        mc6: mc6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LGUI
+                &macro_press &kp LSHIFT
+                &macro_tap &kp D
+                &macro_release &kp LSHIFT
+                &macro_release &kp LGUI
+            >;
+        };
+
+        // MC7 - Canción anterior
+        mc7: mc7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_PREV
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC8 - Play/Pause
+        mc8: mc8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_PLAY_PAUSE
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC9 - Canción siguiente
+        mc9: mc9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_NEXT
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC10 - Silenciar volumen
+        mc10: mc10 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_MUTE
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC11 - Bajar volumen
+        mc11: mc11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_VOL_DN
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
+        // MC12 - Subir volumen
+        mc12: mc12 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp C_VOL_UP
+            >;
+            wait-ms = <20>;
+            tap-ms = <25>;
+        };
+
     };
 
-    combos {
-        compatible = "zmk,combos";
+    behaviors {
+        a_accent: a_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_a_accent>, <&macro_tap_a>;
+        };
+
+        e_accent: e_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_e_accent>, <&macro_tap_e>;
+        };
+
+        i_accent: i_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_i_accent>, <&macro_tap_i>;
+        };
+
+        o_accent: o_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_o_accent>, <&macro_tap_o>;
+        };
+
+        u_accent: u_accent {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_u_accent>, <&macro_tap_u>;
+        };
+
+        n_enye: n_enye {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&enye>, <&macro_tap_n>;
+        };
+
+        colon_semicolon: colon_semicolon {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_semicolon>, <&macro_tap_colon>;
+        };
+
+        question_marks: question_marks {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_question>, <&macro_tap_inverted_question>;
+        };
+
+        quote_marks: quote_marks {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_double_quote>, <&macro_tap_single_quote>;
+        };
+
+        comma_dot: comma_dot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_dot>, <&macro_tap_comma>;
+        };
+
+        minus_underscore: minus_underscore {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&macro_underscore>, <&macro_tap_minus>;
+        };
         
-        // COMBO: JK = Ñ
-        combo_enye {
-            timeout-ms = <35>;
-            key-positions = <19 20>;
-            bindings = <&enye>;
-            layers = <0>;
-        };
-
-        // COMBO: DF = Á
-        combo_a {
-            timeout-ms = <35>;
-            key-positions = <15 16>;
-            bindings = <&accent_a>;
-            layers = <0>;
-        };
-
-        // COMBO: WE = É
-        combo_e {
-            timeout-ms = <35>;
-            key-positions = <2 3>;
-            bindings = <&accent_e>;
-            layers = <0>;
-        };
-
-        // COMBO: UI = Í
-        combo_i {
-            timeout-ms = <35>;
-            key-positions = <7 8>;
-            bindings = <&accent_i>;
-            layers = <0>;
-        };
-
-        // COMBO: IO = Ó
-        combo_o {
-            timeout-ms = <35>;
-            key-positions = <8 9>;
-            bindings = <&accent_o>;
-            layers = <0>;
-        };
-
-        // COMBO: YU = Ú
-        combo_u {
-            timeout-ms = <35>;
-            key-positions = <6 7>;
-            bindings = <&accent_u>;
-            layers = <0>;
-        };
-
-        // COMBO: ./ = ¿
-        combo_inv_q {
-            timeout-ms = <35>;
-            key-positions = <33 34>;
-            bindings = <&inv_question>;
-            layers = <0>;
-        };
-
-        // COMBO: ZX = ¡
-        combo_inv_e {
-            timeout-ms = <35>;
-            key-positions = <25 26>;
-            bindings = <&inv_exclaim>;
-            layers = <0>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // CAPA 0: BASE - Limpia, sin hold-taps en teclas frecuentes
         default_layer {
-            display-name = "Base";
-            bindings = 
-            // Fila 1
-                &kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T
-                &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-            // Fila 2
-                &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G
-                &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-            // Fila 3
-                &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B
-                &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-            // Pulgares
-                &kp LCTRL &lt 1 SPACE &kp LGUI
-                &kp RALT  &lt 2 ENTER &spotlight
+            display-name = "Default Layer";
+            bindings = <
+            // Left hand - Row 1
+                &kp ESC
+                &kp Q
+                &kp W
+                &e_accent 0 0
+                &kp R
+                &kp T
+            // Right hand - Row 1
+                &kp Y
+                &u_accent 0 0
+                &i_accent 0 0
+                &o_accent 0 0
+                &kp P
+                &kp BACKSPACE
+            // Left hand - Row 2
+                &kp TAB
+                &a_accent 0 0
+                &kp S
+                &kp D
+                &kp F
+                &kp G
+            // Right hand - Row 2
+                &kp H
+                &kp J
+                &kp K
+                &kp L
+				&colon_semicolon 0 0
+				&question_marks 0 0
+            // Left hand - Row 3
+                &kp LSHIFT
+                &kp Z
+                &kp X
+                &kp C
+				&kp V
+                &kp B
+            // Right hand - Row 3
+                &n_enye 0 0
+                &kp M
+                &comma_dot 0 0
+                &quote_marks 0 0
+                &minus_underscore 0 0
+                &kp RSHIFT
+            // Thumbs - Left
+                &kp LGUI
+                &mo 1
+                &kp SPACE
+            // Thumbs - Right
+                &kp ENTER
+                &mo 2
+                &spootlight
             >;
         };
 
-        // CAPA 1: SÍMBOLOS Y NÚMEROS
-        symbols_layer {
-            display-name = "Symbols";
-            bindings = 
-            // Fila 1
-                &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5
-                &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
-            // Fila 2
-                &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT
-                &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp PIPE
-            // Fila 3
-                &trans    &kp MINUS &kp UNDER &kp LBKT  &kp RBKT  &kp LBRC
-                &kp RBRC  &kp EQUAL &kp PLUS  &kp LT    &kp GT    &kp BSLH
-            // Pulgares
-                &trans    &trans    &trans
-                &trans    &mo 3     &trans
+        raise_layer {
+            display-name = "Raise Layer";
+            bindings = <
+            // Left hand - Row 1
+                &mc0
+                &exclamation_marks 0 0
+                &at_sym
+                &hash_sym
+                &dollar
+                &percent_sym
+            // Right hand - Row 1
+                &question
+                &ampersand
+                &caret_sym
+                &pipe_sym
+                &plus_sym
+                &minus_underscore 0 0
+            // Left hand - Row 2
+                &kp TAB
+                &kp N1
+                &kp N2
+                &kp N3
+                &kp N4
+                &kp N5
+            // Right hand - Row 2
+                &kp N6
+                &kp N7
+                &kp N8
+                &kp N9
+                &kp N0
+                &equal_sym
+            // Left hand - Row 3
+                &tilde_sym
+                &grave_sym
+                &less_than
+                &left_brace
+                &left_paren
+                &left_bracket
+            // Right hand - Row 3
+                &right_bracket
+                &right_paren
+                &right_brace
+                &greater_than
+                &multiply_sym
+                &slash_backslash 0 0
+            // Thumbs - Left
+                &kp LGUI
+                &mo 1
+                &kp SPACE
+            // Thumbs - Right
+                &kp ENTER
+                &mo 2
+                &spootlight
             >;
         };
 
-        // CAPA 2: NAVEGACIÓN Y FUNCIÓN
-        nav_layer {
-            display-name = "Nav";
-            bindings = 
-            // Fila 1
-                &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-                &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-            // Fila 2
-                &kp CAPS  &kp HOME  &kp PG_DN &kp PG_UP &kp END   &none
-                &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp INS   &kp DEL
-            // Fila 3
-                &trans    &none     &none     &none     &none     &none
-                &none     &none     &none     &none     &none     &trans
-            // Pulgares
-                &trans    &mo 3     &trans
-                &trans    &trans    &trans
-            >;
-        };
-
-        // CAPA 3: CONTROL Y MEDIA
-        control_layer {
-            display-name = "Control";
-            bindings = 
-            // Fila 1
-                &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-                &none        &none        &none        &none        &none        &bootloader
-            // Fila 2
-                &none        &bright_down &bright_up   &none        &none        &none
-                &prev_track  &vol_down    &vol_up      &next_track  &play_pause  &kp C_MUTE
-            // Fila 3
-                &none        &none        &none        &none        &none        &none
-                &none        &none        &none        &none        &none        &none
-            // Pulgares
-                &trans       &trans       &trans
-                &trans       &trans       &trans
+        lower_layer {
+            display-name = "Lower Layer";
+            bindings = <
+            // Left hand - Row 1
+                &kp LC(C_BRI_DEC)
+                &kp LC(C_BRI_INC)
+                &kp LC(C_AL_CALCULATOR)
+                &kp LC(C_AL_SCREEN_SAVER)
+                &mc5
+                &mc6
+            // Right hand - Row 1
+                &mc7
+                &mc8
+                &mc9
+                &kp LC(C_PREV)
+                &kp LC(C_PLAY_PAUSE)
+                &kp LC(C_NEXT)
+            // Left hand - Row 2
+                &bt BT_CLR                      
+                &bt BT_SEL 0
+                &bt BT_SEL 1
+                &bt BT_SEL 2
+                &bt BT_SEL 3
+                &bt BT_SEL 4
+            // Right hand - Row 2
+                &kp LEFT
+                &kp DOWN
+                &kp UP
+                &kp RIGHT
+                &none
+                &none
+            // Left hand - Row 3
+                &none
+                &none
+                &none
+                &none
+                &none
+                &none
+            // Right hand - Row 3
+                &none
+                &none
+                &none
+                &none
+                &none
+                &none
+            // Thumbs - Left
+                &none
+                &none
+                &none
+            // Thumbs - Right
+                &none
+                &none
+                &none
             >;
         };
     };
