@@ -789,19 +789,19 @@
                 &kp ESC
                 &kp Q
                 &kp W
-                &kp E
+                &e_accent 0 0
                 &kp R
                 &kp T
             // Right hand - Row 1
                 &kp Y
-                &kp U
-                &kp I
-                &kp O
+                &u_accent 0 0
+                &i_accent 0 0
+                &o_accent 0 0
                 &kp P
                 &kp BACKSPACE
             // Left hand - Row 2
                 &kp TAB
-                &kp A
+                &a_accent 0 0
                 &kp S
                 &kp D
                 &kp F
@@ -811,7 +811,7 @@
                 &kp J
                 &kp K
                 &kp L
-                &enye
+                &n_enye 0 0
                 &colon_semicolon 0 0
             // Left hand - Row 3
                 &kp LSHIFT
