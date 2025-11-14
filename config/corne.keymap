@@ -811,21 +811,21 @@
                 &kp J
                 &kp K
                 &kp L
-                &colon_semicolon 0 0
-                &minus_underscore 0 0
+				&colon_semicolon 0 0
+				&question_marks 0 0
             // Left hand - Row 3
                 &kp LSHIFT
-                &question_marks 0 0
                 &kp Z
                 &kp X
                 &kp C
-                &quote_marks 0 0
-            // Right hand - Row 3
-                &comma_dot 0 0
-                &kp V
+				&kp V
                 &kp B
+            // Right hand - Row 3
                 &n_enye 0 0
                 &kp M
+                &comma_dot 0 0
+                &quote_marks 0 0
+                &minus_underscore 0 0
                 &kp RSHIFT
             // Thumbs - Left
                 &kp LGUI
