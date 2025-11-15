@@ -858,12 +858,12 @@
                 &dollar
                 &percent_sym
             // Right hand - Row 1
-                &question
-                &ampersand
                 &caret_sym
+                &ampersand
+                &question
+                &multiply_sym
+                &left_paren
                 &pipe_sym
-                &plus_sym
-                &minus_underscore 0 0
             // Left hand - Row 2
                 &kp TAB
                 &kp N1
@@ -890,7 +890,7 @@
                 &right_paren
                 &right_brace
                 &greater_than
-                &multiply_sym
+                
                 &slash_backslash 0 0
             // Thumbs - Left
                 &kp LGUI
