@@ -326,11 +326,12 @@
         };
 
         // Macros para HOLD (letra con acento) - ALT + letra en macOS
+        // Delays más largos para funcionar bien por Bluetooth
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -342,8 +343,8 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -355,8 +356,8 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -368,8 +369,8 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -381,8 +382,8 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -399,16 +400,16 @@
         };
 
         // Macro para HOLD (letra ñ) - ALT + N en macOS
+        // Delays más largos para funcionar bien por Bluetooth
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
                 &macro_release &kp LALT
-                &macro_tap &kp N
             >;
         };
 
