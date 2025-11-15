@@ -851,7 +851,7 @@
                 &kp J
                 &kp K
                 &kp L
-		        &n_enye 0 0
+		        &enye
 		        &colon_semicolon 0 0
             // Left hand - Row 3
                 &kp LSHIFT
