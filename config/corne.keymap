@@ -693,7 +693,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_a_accent>, <&macro_tap_a>;
         };
 
@@ -701,7 +702,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_e_accent>, <&macro_tap_e>;
         };
 
@@ -709,7 +711,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_i_accent>, <&macro_tap_i>;
         };
 
@@ -717,7 +720,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_o_accent>, <&macro_tap_o>;
         };
 
@@ -725,7 +729,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_u_accent>, <&macro_tap_u>;
         };
 
@@ -733,7 +738,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&enye>, <&macro_tap_n>;
         };
 
@@ -741,7 +747,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_semicolon>, <&macro_tap_colon>;
         };
 
@@ -749,7 +756,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_question>, <&macro_tap_inverted_question>;
         };
 
@@ -757,7 +765,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_double_quote>, <&macro_tap_single_quote>;
         };
 
@@ -765,7 +774,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_dot>, <&macro_tap_comma>;
         };
 
@@ -773,7 +783,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <0>;
             bindings = <&macro_underscore>, <&macro_tap_minus>;
         };
         
