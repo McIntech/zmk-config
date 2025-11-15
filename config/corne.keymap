@@ -332,8 +332,10 @@
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
-                &kp LA(E)
-                &kp A
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp A
             >;
         };
 
@@ -343,8 +345,10 @@
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
-                &kp LA(E)
-                &kp E
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp E
             >;
         };
 
@@ -354,8 +358,10 @@
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
-                &kp LA(E)
-                &kp I
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp I
             >;
         };
 
@@ -365,8 +371,10 @@
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
-                &kp LA(E)
-                &kp O
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp O
             >;
         };
 
@@ -376,8 +384,10 @@
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
-                &kp LA(E)
-                &kp U
+                &macro_press &kp LALT
+                &macro_tap &kp E
+                &macro_release &kp LALT
+                &macro_tap &kp U
             >;
         };
 
@@ -395,8 +405,10 @@
             wait-ms = <5>;
             tap-ms = <10>;
             bindings = <
-                &kp LA(N)
-                &kp N
+                &macro_press &kp LALT
+                &macro_tap &kp N
+                &macro_release &kp LALT
+                &macro_tap &kp N
             >;
         };
 
@@ -552,12 +564,16 @@
             bindings = <&kp BSLH>;
         };
 
-        // MC1 - Bajar brillo
+        // MC1 - CTRL + SHIFT + P
         mc1: mc1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_tap &kp C_BRIGHTNESS_DEC
+                &macro_press &kp LCTRL
+                &macro_press &kp LSHIFT
+                &macro_tap &kp P
+                &macro_release &kp LSHIFT
+                &macro_release &kp LCTRL
             >;
             wait-ms = <20>;
             tap-ms = <25>;
@@ -568,7 +584,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_tap &kp C_BRIGHTNESS_INC
+                &macro_press &kp C_BRIGHTNESS_INC
+                &macro_release &kp C_BRIGHTNESS_INC
             >;
             wait-ms = <20>;
             tap-ms = <25>;
@@ -653,34 +670,37 @@
             tap-ms = <25>;
         };
 
-        // MC10 - Silenciar volumen
+        // MC10 - Canción anterior (previous track)
         mc10: mc10 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_tap &kp C_MUTE
+                &macro_press &kp C_PREV
+                &macro_release &kp C_PREV
             >;
             wait-ms = <20>;
             tap-ms = <25>;
         };
 
-        // MC11 - Bajar volumen
+        // MC11 - Play/Pause
         mc11: mc11 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_tap &kp C_VOL_DN
+                &macro_press &kp C_PLAY_PAUSE
+                &macro_release &kp C_PLAY_PAUSE
             >;
             wait-ms = <20>;
             tap-ms = <25>;
         };
 
-        // MC12 - Subir volumen
+        // MC12 - Canción siguiente (next track)
         mc12: mc12 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_tap &kp C_VOL_UP
+                &macro_press &kp C_NEXT
+                &macro_release &kp C_NEXT
             >;
             wait-ms = <20>;
             tap-ms = <25>;
