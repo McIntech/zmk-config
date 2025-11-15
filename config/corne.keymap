@@ -598,7 +598,7 @@
             #binding-cells = <0>;
             bindings = <
                 &macro_press &kp LCTRL
-                &macro_tap &kp UP
+                &macro_tap &kp DOWN
                 &macro_release &kp LCTRL
             >;
         };
