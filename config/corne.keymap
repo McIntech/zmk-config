@@ -327,55 +327,55 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp A
+                &kp LA(E)
+                &kp A
             >;
         };
 
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp E
+                &kp LA(E)
+                &kp E
             >;
         };
 
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp I
+                &kp LA(E)
+                &kp I
             >;
         };
 
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp O
+                &kp LA(E)
+                &kp O
             >;
         };
 
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp U
+                &kp LA(E)
+                &kp U
             >;
         };
 
@@ -390,14 +390,12 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <10>;
             bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp N
-                &macro_release &kp LALT
-                &macro_tap &kp N
+                &kp LA(N)
+                &kp N
             >;
-            wait-ms = <20>;
-            tap-ms = <20>;
         };
 
         // Macro para TAP (dos puntos :)
@@ -845,7 +843,7 @@
             // Thumbs - Right
                 &kp ENTER
                 &mo 2
-                &spootlight
+                &kp LCTRL
             >;
         };
 
@@ -853,7 +851,7 @@
             display-name = "Raise Layer";
             bindings = <
             // Left hand - Row 1
-                &mc0
+                &kp ESC
                 &exclamation_marks 0 0
                 &at_sym
                 &hash_sym
