@@ -872,7 +872,7 @@
             bindings = <
             // Left hand - Row 1
                 &mc0
-                &exclamation_marks 0 0
+                &exclamation_marks
                 &at_sym
                 &hash_sym
                 &dollar
@@ -893,7 +893,7 @@
                 &kp N5
             // Right hand - Row 2
                 &plus_sym
-                &minus_underscore 0 0
+                &minus_underscore
                 &pipe_sym
                 &left_brace
                 &right_brace
