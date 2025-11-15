@@ -21,7 +21,7 @@
 };
 
 / {
-        macros {
+    macros {
 
         vol_up: vol_up {
             compatible = "zmk,behavior-macro";
@@ -586,16 +586,7 @@
             >;
         };
 
-        // MC4 - Spotlight (ya lo tienes como 'spootlight')
-        mc4: mc4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LGUI
-                &macro_tap &kp SPACE
-                &macro_release &kp LGUI
-            >;
-        };
+
 
         // MC5 - Micrófono mute/unmute
         mc5: mc5 {
