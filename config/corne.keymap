@@ -405,8 +405,8 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <12>;
+            tap-ms = <12>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
