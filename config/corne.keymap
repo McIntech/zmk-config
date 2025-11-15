@@ -404,8 +404,8 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            wait-ms = <10>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
@@ -780,7 +780,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <120>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <2>;
             bindings = <&macro_tap_n>, <&enye>;
         };
 
