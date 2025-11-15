@@ -21,7 +21,7 @@
 };
 
 / {
-    macros {
+        macros {
 
         vol_up: vol_up {
             compatible = "zmk,behavior-macro";
@@ -381,6 +381,61 @@
             >;
         };
 
+        // Macros para mayúsculas acentuadas
+        macro_A_accent: macro_A_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(A)
+            >;
+        };
+
+        macro_E_accent: macro_E_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(E)
+            >;
+        };
+
+        macro_I_accent: macro_I_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(I)
+            >;
+        };
+
+        macro_O_accent: macro_O_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(O)
+            >;
+        };
+
+        macro_U_accent: macro_U_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(U)
+            >;
+        };
 
         // Macro para TAP (letra n normal)
         macro_tap_n: macro_tap_n {
@@ -586,7 +641,16 @@
             >;
         };
 
-
+        // MC4 - Spotlight (ya lo tienes como 'spootlight')
+        mc4: mc4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LGUI
+                &macro_tap &kp SPACE
+                &macro_release &kp LGUI
+            >;
+        };
 
         // MC5 - Micrófono mute/unmute
         mc5: mc5 {
@@ -935,19 +999,19 @@
                 &none
                 &none
                 &none
-                &macro_e_accent
+                &macro_E_accent
                 &none
                 &none
             // Right hand - Row 1
-                &macro_u_accent
-                &macro_i_accent
-                &macro_o_accent
+                &macro_U_accent
+                &macro_I_accent
+                &macro_O_accent
                 &none
                 &none
                 &none
             // Left hand - Row 2
                 &none
-                &macro_a_accent
+                &macro_A_accent
                 &none
                 &none
                 &none
