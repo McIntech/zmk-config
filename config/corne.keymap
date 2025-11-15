@@ -25,7 +25,7 @@
 
         vol_up: vol_up {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_VOL_UP
             >;
@@ -33,7 +33,7 @@
 
         spootlight: spootlight {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
 			    &macro_press &kp LGUI      // 1. Presiona ⌘ (Command)
 			    &macro_tap   &kp SPACE     // 2. Toca SPACE mientras ⌘ sigue presionado
@@ -43,7 +43,7 @@
 
         accent_dead: accent_dead {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -56,7 +56,7 @@
         // Símbolos con Shift para macOS - Fila 1
         exclamation: exclamation {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N1
@@ -66,7 +66,7 @@
 
         hash_sym: hash_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N3
@@ -76,7 +76,7 @@
 
         dollar: dollar {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N4
@@ -86,7 +86,7 @@
 
         percent_sym: percent_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N5
@@ -96,7 +96,7 @@
 
         ampersand: ampersand {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N7
@@ -106,7 +106,7 @@
 
         left_paren: left_paren {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N9
@@ -116,7 +116,7 @@
 
         right_paren: right_paren {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N0
@@ -126,7 +126,7 @@
 
         question: question {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp FSLH
@@ -136,7 +136,7 @@
 
         pipe_sym: pipe_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp BSLH
@@ -147,7 +147,7 @@
         // Símbolos con Shift para macOS - Fila 3
         at_sym: at_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N2
@@ -157,7 +157,7 @@
 
         tilde_sym: tilde_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp GRAVE
@@ -167,7 +167,7 @@
 
         caret_sym: caret_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N6
@@ -177,7 +177,7 @@
 
         plus_sym: plus_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp EQUAL
@@ -187,7 +187,7 @@
 
         star_sym: star_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N8
@@ -197,7 +197,7 @@
 
         underscore: underscore {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp MINUS
@@ -207,7 +207,7 @@
 
         colon_sym: colon_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp SEMICOLON
@@ -218,7 +218,7 @@
         // Macro para < (menor que)
         less_than: less_than {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp COMMA
@@ -229,7 +229,7 @@
         // Macro para > (mayor que)
         greater_than: greater_than {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp DOT
@@ -240,28 +240,28 @@
         // Macro para = (igual)
         equal_sym: equal_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp EQUAL>;
         };
 
         // Macro para [ (corchete izquierdo)
         left_bracket: left_bracket {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp LBKT>;
         };
 
         // Macro para ] (corchete derecho)
         right_bracket: right_bracket {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp RBKT>;
         };
 
         // Macro para { (llave izquierda)
         left_brace: left_brace {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp LBKT
@@ -272,7 +272,7 @@
         // Macro para } (llave derecha)
         right_brace: right_brace {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp RBKT
@@ -283,52 +283,52 @@
         // Macro para * (multiplicación)
         multiply_sym: multiply_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&star_sym>;
         };
 
         // Macro para ` (acento grave)
         grave_sym: grave_sym {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp GRAVE>;
         };
 
         // Macros para TAP (letra normal)
         macro_tap_a: macro_tap_a {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp A>;
         };
 
         macro_tap_e: macro_tap_e {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp E>;
         };
 
         macro_tap_i: macro_tap_i {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp I>;
         };
 
         macro_tap_o: macro_tap_o {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp O>;
         };
 
         macro_tap_u: macro_tap_u {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp U>;
         };
 
         // Macros para HOLD (letra con acento)
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -339,7 +339,7 @@
 
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -350,7 +350,7 @@
 
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -361,7 +361,7 @@
 
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -372,7 +372,7 @@
 
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -384,7 +384,7 @@
         // Macros para mayúsculas acentuadas
         macro_A_accent: macro_A_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -395,7 +395,7 @@
 
         macro_E_accent: macro_E_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -406,7 +406,7 @@
 
         macro_I_accent: macro_I_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -417,7 +417,7 @@
 
         macro_O_accent: macro_O_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -428,7 +428,7 @@
 
         macro_U_accent: macro_U_accent {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms  = <10>;
             bindings = <
@@ -440,14 +440,14 @@
         // Macro para TAP (letra n normal)
         macro_tap_n: macro_tap_n {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp N>;
         };
 
         // Macro para HOLD (letra ñ)
         enye: enye {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             wait-ms = <5>;
             tap-ms = <10>;
             bindings = <
@@ -459,7 +459,7 @@
         // Macro para TAP (dos puntos :)
         macro_tap_colon: macro_tap_colon {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp SEMICOLON
@@ -470,14 +470,14 @@
         // Macro para HOLD (punto y coma ;)
         macro_semicolon: macro_semicolon {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp SEMICOLON>;
         };
 
         // Macro para TAP (signo de interrogación de apertura ¿)
         macro_tap_inverted_question: macro_tap_inverted_question {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_press &kp LALT
@@ -490,7 +490,7 @@
         // Macro para HOLD (signo de interrogación ?)
         macro_question: macro_question {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp FSLH
@@ -501,14 +501,14 @@
         // Macro para TAP (comilla simple ')
         macro_tap_single_quote: macro_tap_single_quote {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp SINGLE_QUOTE>;
         };
 
         // Macro para HOLD (comilla doble ")
         macro_double_quote: macro_double_quote {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp SINGLE_QUOTE
@@ -519,28 +519,28 @@
         // Macro para TAP (coma ,)
         macro_tap_comma: macro_tap_comma {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp COMMA>;
         };
 
         // Macro para HOLD (punto .)
         macro_dot: macro_dot {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp DOT>;
         };
 
         // Macro para TAP (guion -)
         macro_tap_minus: macro_tap_minus {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp MINUS>;
         };
 
         // Macro para HOLD (guion bajo _)
         macro_underscore: macro_underscore {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp MINUS
@@ -550,7 +550,7 @@
 
         mc0: mc0 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LCTRL
                 &macro_tap &kp C
@@ -569,7 +569,7 @@
 
         macro_tap_inverted_exclamation: macro_tap_inverted_exclamation {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N1
@@ -579,7 +579,7 @@
 
         macro_exclamation: macro_exclamation {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LSHIFT
                 &macro_tap &kp N1
@@ -598,20 +598,20 @@
 
         macro_tap_slash: macro_tap_slash {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp FSLH>;
         };
 
         macro_backslash: macro_backslash {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&kp BSLH>;
         };
 
         // MC1 - Bajar brillo
         mc1: mc1 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_BRIGHTNESS_DEC
             >;
@@ -622,7 +622,7 @@
         // MC2 - Subir brillo
         mc2: mc2 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_BRIGHTNESS_INC
             >;
@@ -633,7 +633,7 @@
         // MC3 - Exposé (mostrar todas las apps)
         mc3: mc3 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LCTRL
                 &macro_tap &kp UP
@@ -644,7 +644,7 @@
         // MC4 - Spotlight (ya lo tienes como 'spootlight')
         mc4: mc4 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LGUI
                 &macro_tap &kp SPACE
@@ -655,7 +655,7 @@
         // MC5 - Micrófono mute/unmute
         mc5: mc5 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_MUTE
             >;
@@ -666,7 +666,7 @@
         // MC6 - No molestar (Focus)
         mc6: mc6 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_press &kp LGUI
                 &macro_press &kp LSHIFT
@@ -679,7 +679,7 @@
         // MC7 - Canción anterior
         mc7: mc7 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_PREV
             >;
@@ -690,7 +690,7 @@
         // MC8 - Play/Pause
         mc8: mc8 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_PLAY_PAUSE
             >;
@@ -701,7 +701,7 @@
         // MC9 - Canción siguiente
         mc9: mc9 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_NEXT
             >;
@@ -712,7 +712,7 @@
         // MC10 - Silenciar volumen
         mc10: mc10 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_MUTE
             >;
@@ -723,7 +723,7 @@
         // MC11 - Bajar volumen
         mc11: mc11 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_VOL_DN
             >;
@@ -734,7 +734,7 @@
         // MC12 - Subir volumen
         mc12: mc12 {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <
                 &macro_tap &kp C_VOL_UP
             >;
@@ -792,7 +792,7 @@
 
         n_enye: n_enye {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <120>;
             quick-tap-ms = <0>;
