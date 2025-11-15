@@ -330,8 +330,8 @@
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -343,8 +343,8 @@
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -356,8 +356,8 @@
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -369,8 +369,8 @@
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -382,8 +382,8 @@
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp E
@@ -404,8 +404,8 @@
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <20>;
+            wait-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
