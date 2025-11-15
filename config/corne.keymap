@@ -400,16 +400,18 @@
         };
 
         // Macro para HOLD (letra ñ) - ALT + N en macOS
+        // ALT+N genera tilde muerta, luego N completa la combinación = ñ
         // Delays más largos para funcionar bien por Bluetooth
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
-            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = <
                 &macro_press &kp LALT
                 &macro_tap &kp N
                 &macro_release &kp LALT
+                &macro_tap &kp N
             >;
         };
 
