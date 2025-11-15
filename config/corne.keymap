@@ -15,6 +15,7 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/reset.h>
+#include <dt-bindings/zmk/unicode.h>
 
 &led_strip {
     chain-length = <27>;
@@ -325,70 +326,35 @@
             bindings = <&kp U>;
         };
 
-        // Macros para HOLD (letra con acento)
+        // Macros para HOLD (letra con acento) - Unicode para funcionar por Bluetooth
         macro_a_accent: macro_a_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms  = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp A
-            >;
+            bindings = <&kp RA(A)>;
         };
 
         macro_e_accent: macro_e_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms  = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp E
-            >;
+            bindings = <&kp RA(E)>;
         };
 
         macro_i_accent: macro_i_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms  = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp I
-            >;
+            bindings = <&kp RA(I)>;
         };
 
         macro_o_accent: macro_o_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms  = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp O
-            >;
+            bindings = <&kp RA(O)>;
         };
 
         macro_u_accent: macro_u_accent {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms  = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp E
-                &macro_release &kp LALT
-                &macro_tap &kp U
-            >;
+            bindings = <&kp RA(U)>;
         };
 
         // Macro para TAP (letra n normal)
@@ -398,18 +364,11 @@
             bindings = <&kp N>;
         };
 
-        // Macro para HOLD (letra ñ)
+        // Macro para HOLD (letra ñ) - Alt Derecho + N para macOS
         enye: enye {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <10>;
-            bindings = <
-                &macro_press &kp LALT
-                &macro_tap &kp N
-                &macro_release &kp LALT
-                &macro_tap &kp N
-            >;
+            bindings = <&kp RA(N)>;
         };
 
         // Macro para TAP (dos puntos :)
