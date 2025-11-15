@@ -734,7 +734,7 @@
 
         n_enye: n_enye {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <120>;
             quick-tap-ms = <0>;
@@ -798,19 +798,19 @@
                 &kp ESC
                 &kp Q
                 &kp W
-                &e_accent 0 0
+                &kp E
                 &kp R
                 &kp T
             // Right hand - Row 1
                 &kp Y
-                &u_accent 0 0
-                &i_accent 0 0
-                &o_accent 0 0
+                &kp U
+                &kp I
+                &kp O
                 &kp P
                 &kp BACKSPACE
             // Left hand - Row 2
                 &kp TAB
-                &a_accent 0 0
+                &kp A
                 &kp S
                 &kp D
                 &kp F
@@ -820,17 +820,17 @@
                 &kp J
                 &kp K
                 &kp L
-				&colon_semicolon 0 0
-				&question_marks 0 0
+		&colon_semicolon 0 0
+		&question_marks 0 0
             // Left hand - Row 3
                 &kp LSHIFT
                 &kp Z
                 &kp X
                 &kp C
-				&kp V
+		&kp V
                 &kp B
             // Right hand - Row 3
-                &n_enye 0 0
+                &n_enye
                 &kp M
                 &comma_dot 0 0
                 &quote_marks 0 0
@@ -860,10 +860,10 @@
             // Right hand - Row 1
                 &caret_sym
                 &ampersand
-                &question
                 &multiply_sym
                 &left_paren
                 &pipe_sym
+                &question
             // Left hand - Row 2
                 &kp TAB
                 &kp N1
