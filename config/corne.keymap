@@ -1,8 +1,10 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+ * Author: Franco Limón
+ * Teclado Corne con keymap en español (macOS)
+ * Teclado dividido 6x3 + 3 (thumbs) por lado
+ * Nice!Nano v2 como controlador
+ * Firmware basado en ZMK
+*/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -376,6 +378,62 @@
             bindings = <
                 &kp LA(E)
                 &kp U
+            >;
+        };
+
+        // Macros para mayúsculas acentuadas
+        macro_A_accent: macro_A_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(A)
+            >;
+        };
+
+        macro_E_accent: macro_E_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(E)
+            >;
+        };
+
+        macro_I_accent: macro_I_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(I)
+            >;
+        };
+
+        macro_O_accent: macro_O_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(O)
+            >;
+        };
+
+        macro_U_accent: macro_U_accent {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms  = <10>;
+            bindings = <
+                &kp LA(E)
+                &kp LS(U)
             >;
         };
 
@@ -791,6 +849,15 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // Para esta parte quiero que sea una tecla para poner acentos ´ como lo hago en el teclado en español si pongo ´ + a = á , quiero que se sienta fluido.
+        // Igual para la ñ crea una tecla super fluida unicamente para la ñ
+
+        // |  ESC   |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |   I   |   O   |   P   | BACKSPACE |
+        // |  TAB   |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |   K   |   L   |   Ñ   |   : / ;   |
+        // | LSHIFT |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  | , / . | - / _ | ' / " |  LSHIFT   |
+
+        //    | ⌘ LGUI | MO(1) | SPACE |     | ENTER | MO(2) | CTRL |
+
         default_layer {
             display-name = "Default Layer";
             bindings = <
@@ -820,22 +887,22 @@
                 &kp J
                 &kp K
                 &kp L
-		&colon_semicolon 0 0
-		&question_marks 0 0
+		        &n_enye
+		        &colon_semicolon 0 0
             // Left hand - Row 3
                 &kp LSHIFT
                 &kp Z
                 &kp X
-                &kp C
-		&kp V
+		        &kp C
+                &kp V
                 &kp B
             // Right hand - Row 3
-                &n_enye
+                &kp N
                 &kp M
                 &comma_dot 0 0
-                &quote_marks 0 0
                 &minus_underscore 0 0
-                &kp RSHIFT
+                &quote_marks 0 0
+                &kp LSHIFT
             // Thumbs - Left
                 &kp LGUI
                 &mo 1
@@ -847,11 +914,20 @@
             >;
         };
 
+        // MC0 = CTRL + C
+        // MC1 = CTRL + SHIFT + P
+
+        // | MC0 | ¡ / ! |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |  /  |
+        // | TAB |   1   |  2  |  3  |  4  |  5  |     |  +  | -/_ |  |  |  {  |  }  |  \  |
+        // | MC1 |   6   |  7  |  8  |  9  |  0  |     |  <  |  >  |  `  |  [  |  ]  |  ~  |
+
+        // | ⌘ LGUI | MO(1) | SPACE |     | ENTER | MO(2) | SPOOTLIGHT |
+
         raise_layer {
             display-name = "Raise Layer";
             bindings = <
             // Left hand - Row 1
-                &kp ESC
+                &mc0
                 &exclamation_marks 0 0
                 &at_sym
                 &hash_sym
@@ -860,10 +936,10 @@
             // Right hand - Row 1
                 &caret_sym
                 &ampersand
-                &multiply_sym
+                &star_sym
                 &left_paren
-                &pipe_sym
-                &question
+                &right_paren
+                &kp FSLH
             // Left hand - Row 2
                 &kp TAB
                 &kp N1
@@ -872,26 +948,26 @@
                 &kp N4
                 &kp N5
             // Right hand - Row 2
+                &plus_sym
+                &minus_underscore 0 0
+                &pipe_sym
+                &left_brace
+                &right_brace
+                &kp BSLH
+            // Left hand - Row 3
+                &mc1
                 &kp N6
                 &kp N7
                 &kp N8
                 &kp N9
                 &kp N0
-                &equal_sym
-            // Left hand - Row 3
-                &tilde_sym
-                &grave_sym
-                &less_than
-                &left_brace
-                &left_paren
-                &left_bracket
             // Right hand - Row 3
-                &right_bracket
-                &right_paren
-                &right_brace
+                &less_than
                 &greater_than
-                
-                &slash_backslash 0 0
+                &grave_sym
+                &left_bracket
+                &right_bracket
+                &tilde_sym
             // Thumbs - Left
                 &kp LGUI
                 &mo 1
@@ -903,30 +979,43 @@
             >;
         };
 
+        // MC1 = Bajar brillo
+        // MC2 = Subir brillo
+        // MC3 = ctrl + down
+        // MC10 = previous track
+        // MC11 = play/pause
+        // MC12 = next track
+
+        // |     |     |     |  É  |     |     |     |  Ú  |  Í  |  Ó  |      |      |      |
+        // |     |  Á  |     |     |     |     |     | ⬅️  | ⬇️  | ➡️  |  ➡️  |      |      |
+        // | BTC | BT1 | BT2 | BT3 | BT4 | BT5 |     | MC1 | MC2 | MC3 | MC10 | MC11 | MC12 |
+
+        //    | ⌘ LGUI | MO(1) | SPACE |     | ENTER | MO(2) | SPOOTLIGHT |
+
         lower_layer {
             display-name = "Lower Layer";
             bindings = <
             // Left hand - Row 1
-                &kp LC(C_BRI_DEC)
-                &kp LC(C_BRI_INC)
-                &kp LC(C_AL_CALCULATOR)
-                &kp LC(C_AL_SCREEN_SAVER)
-                &mc5
-                &mc6
+                &none
+                &none
+                &none
+                &macro_E_accent
+                &none
+                &none
             // Right hand - Row 1
-                &mc7
-                &mc8
-                &mc9
-                &kp LC(C_PREV)
-                &kp LC(C_PLAY_PAUSE)
-                &kp LC(C_NEXT)
+                &macro_U_accent
+                &macro_I_accent
+                &macro_O_accent
+                &none
+                &none
+                &none
             // Left hand - Row 2
-                &bt BT_CLR                      
-                &bt BT_SEL 0
-                &bt BT_SEL 1
-                &bt BT_SEL 2
-                &bt BT_SEL 3
-                &bt BT_SEL 4
+                &none
+                &macro_A_accent
+                &none
+                &none
+                &none
+                &none
             // Right hand - Row 2
                 &kp LEFT
                 &kp DOWN
@@ -935,27 +1024,27 @@
                 &none
                 &none
             // Left hand - Row 3
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &bt BT_CLR
+                &bt BT_SEL 0
+                &bt BT_SEL 1
+                &bt BT_SEL 2
+                &bt BT_SEL 3
+                &bt BT_SEL 4
             // Right hand - Row 3
-                &none
-                &none
-                &none
-                &none
-                &none
-                &none
+                &mc1
+                &mc2
+                &mc3
+                &mc7
+                &mc8
+                &mc9
             // Thumbs - Left
-                &none
-                &none
-                &none
+                &kp LGUI
+                &mo 1
+                &kp SPACE
             // Thumbs - Right
-                &none
-                &none
-                &none
+                &kp ENTER
+                &mo 2
+                &spootlight
             >;
         };
     };
