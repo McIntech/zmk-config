@@ -706,6 +706,17 @@
             tap-ms = <25>;
         };
 
+        // Macro para borrar palabra (ALT + BACKSPACE)
+        del_word: del_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_tap &kp BACKSPACE
+                &macro_release &kp LALT
+            >;
+        };
+
     };
 
     behaviors {
@@ -807,7 +818,16 @@
             quick-tap-ms = <0>;
             bindings = <&macro_underscore>, <&macro_tap_minus>;
         };
-        
+
+        backspace_del_word: backspace_del_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&del_word>, <&kp BACKSPACE>;
+        };
+
     };
 
     keymap {
@@ -838,7 +858,7 @@
                 &kp I
                 &kp O
                 &kp P
-                &kp BACKSPACE
+                &backspace_del_word 0 0
             // Left hand - Row 2
                 &kp TAB
                 &kp A
