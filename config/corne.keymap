@@ -832,7 +832,7 @@
                 &kp K
                 &kp L
 		        &n_enye
-		        &colon_semicolon
+		        &colon_semicolon 0 0
             // Left hand - Row 3
                 &kp LSHIFT
                 &kp Z
@@ -843,9 +843,9 @@
             // Right hand - Row 3
                 &kp N
                 &kp M
-                &comma_dot
-                &minus_underscore
-                &quote_marks
+                &comma_dot 0 0
+                &minus_underscore 0 0
+                &quote_marks 0 0
                 &kp LSHIFT
             // Thumbs - Left
                 &kp LGUI
@@ -872,7 +872,7 @@
             bindings = <
             // Left hand - Row 1
                 &mc0
-                &exclamation_marks
+                &exclamation_marks 0 0
                 &at_sym
                 &hash_sym
                 &dollar
@@ -893,7 +893,7 @@
                 &kp N5
             // Right hand - Row 2
                 &plus_sym
-                &minus_underscore
+                &minus_underscore 0 0
                 &pipe_sym
                 &left_brace
                 &right_brace
