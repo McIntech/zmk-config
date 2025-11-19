@@ -870,14 +870,6 @@
             bindings = <&del_word>, <&del_char>;
         };
 
-        // Double-tap para Cmd: screenshot al presionar rápido 2 veces, Cmd normal al mantener
-        lgui_screenshot: lgui_screenshot {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LGUI>, <&cmd_shift_4>;
-        };
-
         // Double-tap para MO(1): Option+Cmd+Esc al presionar rápido 2 veces, MO(1) normal al mantener
         mo1_opt_cmd_esc: mo1_opt_cmd_esc {
             compatible = "zmk,behavior-tap-dance";
@@ -946,7 +938,7 @@
                 &quote_marks 0 0
                 &kp LSHIFT
             // Thumbs - Left
-                &lgui_screenshot
+                &kp LGUI
                 &mo1_opt_cmd_esc
                 &kp SPACE
             // Thumbs - Right
