@@ -744,6 +744,21 @@
             >;
         };
 
+        // Macro para Option + Command + Esc
+        opt_cmd_esc: opt_cmd_esc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &kp LALT
+                &macro_press &kp LGUI
+                &macro_tap &kp ESC
+                &macro_release &kp LGUI
+                &macro_release &kp LALT
+            >;
+            wait-ms = <20>;
+            tap-ms = <20>;
+        };
+
     };
 
     behaviors {
@@ -816,7 +831,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <100>;
             quick-tap-ms = <0>;
-            bindings = <&macro_question>, <&macro_tap_inverted_question>;
+            bindings = <&macro_tap_inverted_question>, <&macro_question>;
         };
 
         quote_marks: quote_marks {
@@ -853,6 +868,22 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             bindings = <&del_word>, <&del_char>;
+        };
+
+        // Double-tap para Cmd: screenshot al presionar rápido 2 veces, Cmd normal al mantener
+        lgui_screenshot: lgui_screenshot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LGUI>, <&cmd_shift_4>;
+        };
+
+        // Double-tap para MO(1): Option+Cmd+Esc al presionar rápido 2 veces, MO(1) normal al mantener
+        mo1_opt_cmd_esc: mo1_opt_cmd_esc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&opt_cmd_esc>;
         };
 
     };
@@ -915,8 +946,8 @@
                 &quote_marks 0 0
                 &kp LSHIFT
             // Thumbs - Left
-                &kp LGUI
-                &mo 1
+                &lgui_screenshot
+                &mo1_opt_cmd_esc
                 &kp SPACE
             // Thumbs - Right
                 &kp ENTER
@@ -1049,7 +1080,7 @@
                 &kp LA(C_PLAY_PAUSE)
                 &kp LA(C_NEXT)
             // Thumbs - Left
-                &kp LGUI
+                &kp LGUI 
                 &mo 1
                 &kp SPACE
             // Thumbs - Right
