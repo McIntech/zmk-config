@@ -870,12 +870,20 @@
             bindings = <&del_word>, <&del_char>;
         };
 
-        // Double-tap para MO(1): Option+Cmd+Esc al presionar rápido 2 veces, MO(1) normal al mantener
-        mo1_opt_cmd_esc: mo1_opt_cmd_esc {
+        // Double-tap para MO(1): screenshot al presionar rápido 2 veces, MO(1) normal al mantener
+        mo1_screenshot: mo1_screenshot {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&opt_cmd_esc>;
+            bindings = <&mo 1>, <&cmd_shift_4>;
+        };
+
+        // Double-tap para MO(2): Option+Cmd+Esc al presionar rápido 2 veces, MO(2) normal al mantener
+        mo2_opt_cmd_esc: mo2_opt_cmd_esc {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 2>, <&opt_cmd_esc>;
         };
 
     };
@@ -939,11 +947,11 @@
                 &kp LSHIFT
             // Thumbs - Left
                 &kp LGUI
-                &mo1_opt_cmd_esc
+                &mo1_screenshot
                 &kp SPACE
             // Thumbs - Right
                 &kp ENTER
-                &mo 2
+                &mo2_opt_cmd_esc
                 &kp LCTRL
             >;
         };
