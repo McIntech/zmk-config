@@ -1,6 +1,8 @@
 # Build output
 build/
 *.uf2
+# ...except the released firmware images
+!firmware/*.uf2
 *.bin
 *.elf
 *.hex
