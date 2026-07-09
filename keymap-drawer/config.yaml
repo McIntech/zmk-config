@@ -1,7 +1,101 @@
-# keymap-drawer style config — regenerate the SVG with:
-#   keymap parse -z config/corne.keymap > /tmp/corne-parsed.yaml
-#   keymap -c keymap-drawer/config.yaml draw /tmp/corne-parsed.yaml > keymap-drawer/corne.svg
-# Note: keymap-drawer 0.21 needs "tree-sitter<0.25" and "tree-sitter-devicetree<0.15"
-# (newer versions break its parser). PNG: rsvg-convert -w 2400 -o out.png corne.svg
+# keymap-drawer config for the Corne cheatsheet.
+# Regenerate SVG + PNG with: keymap-drawer/render.sh
+# Notes:
+# - keymap-drawer 0.21 needs "tree-sitter<0.25" and "tree-sitter-devicetree<0.15".
+# - $$mdi:...$$ glyphs are fetched from Material Design Icons on first run
+#   (network required once; cached locally via use_local_cache).
+
+parse_config:
+  # Render &trans as blank instead of the default ▽ marker
+  trans_legend: { t: '', type: trans }
+
+  zmk_keycode_map:
+    # Shifted legends shown as small labels above the tap legend
+    SQT: { t: "'", s: '"' }
+    FSLH: { t: '/', s: '?' }
+    SEMI: { t: ';', s: ':' }
+    COMMA: { t: ',', s: '<' }
+    DOT: { t: '.', s: '>' }
+    # Modifiers — macOS symbols, muted via the "mod" type/class
+    LCTRL: { t: '⌃', h: ctrl, type: mod }
+    LSHFT: { t: '⇧', h: shift, type: mod }
+    LGUI: { t: '⌘', h: cmd, type: mod }
+    RALT: { t: '⌥', h: opt, type: mod }
+    # Glyphs
+    BSPC: $$mdi:backspace-outline$$
+    RET: $$mdi:keyboard-return$$
+    SPACE: $$mdi:keyboard-space$$
+    LEFT: $$mdi:arrow-left$$
+    DOWN: $$mdi:arrow-down$$
+    UP: $$mdi:arrow-up$$
+    RIGHT: $$mdi:arrow-right$$
+    C_VOL_UP: $$mdi:volume-plus$$
+    C_VOL_DN: $$mdi:volume-minus$$
+    C_PP: $$mdi:play-pause$$
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    # Symbols — a custom zmk_keycode_map replaces keymap-drawer's built-in
+    # defaults entirely, so every symbol used in the keymap must be listed
+    EXCL: '!'
+    AT: '@'
+    HASH: '#'
+    DLLR: '$'
+    PRCNT: '%'
+    CARET: '^'
+    AMPS: '&'
+    ASTRK: '*'
+    LPAR: '('
+    RPAR: ')'
+    MINUS: '-'
+    EQUAL: '='
+    GRAVE: '`'
+    LBKT: '['
+    RBKT: ']'
+    BSLH: '\'
+    PIPE: '|'
+    UNDER: '_'
+    PLUS: '+'
+    TILDE: '~'
+    LBRC: '{'
+    RBRC: '}'
+
+  raw_binding_map:
+    # Bluetooth: glyph + small profile number (0-4) as top label
+    '&bt BT_CLR': { t: $$mdi:bluetooth-off$$ }
+    '&bt BT_SEL 0': { t: $$mdi:bluetooth$$, s: '0' }
+    '&bt BT_SEL 1': { t: $$mdi:bluetooth$$, s: '1' }
+    '&bt BT_SEL 2': { t: $$mdi:bluetooth$$, s: '2' }
+    '&bt BT_SEL 3': { t: $$mdi:bluetooth$$, s: '3' }
+    '&bt BT_SEL 4': { t: $$mdi:bluetooth$$, s: '4' }
+    # macOS shortcut keys — accent styled via the "shortcut" type/class
+    '&kp LG(LS(N4))': { t: $$mdi:camera$$, h: '⌘⇧4', type: shortcut }
+    '&kp LA(LG(ESC))': { t: $$mdi:close-octagon$$, h: Force Quit, type: shortcut }
+    '&kp LC(LA(LG(K)))': { t: K, h: '⌃⌥⌘', type: shortcut }
+    # Layer access keys — accent styled via the "layer" type/class
+    '&mo 1': { t: Lower, type: layer }
+    '&mo 2': { t: Raise, type: layer }
+
 draw_config:
   dark_mode: true
+  # Cache fetched glyphs so regeneration works offline (a failed fetch
+  # silently produces an SVG with missing icons)
+  use_local_cache: true
+  footer_text: 'Corne (crkbd) · nice!nano v2 · ZMK'
+  svg_extra_style: |
+    /* Tokyo Night inspired palette */
+    svg.keymap { background-color: #1a1b26; }
+    rect.key { fill: #24283b; stroke: #414868; stroke-width: 1; }
+    text { fill: #c0caf5; }
+    text.shifted, text.hold { fill: #9aa5ce; }
+    text.label { font-size: 19px; font-weight: 700; fill: #7aa2f7; }
+    text.footer { fill: #565f89; }
+    .mod rect { fill: #1f2335; }
+    .mod text { fill: #787c99; }
+    .layer rect { fill: #2c3352; stroke: #7aa2f7; }
+    .layer text { fill: #7aa2f7; font-weight: 600; }
+    .shortcut rect { fill: #2a2540; stroke: #bb9af7; }
+    .shortcut text { fill: #bb9af7; }
+    .held rect { fill: #3d59a1; stroke: #7aa2f7; }
+    .trans rect { fill: #1f2335; }
+    .glyph { fill: #c0caf5; }
+    .shortcut .glyph { fill: #bb9af7; }
