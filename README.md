@@ -79,7 +79,35 @@ The cheatsheet above is generated from the keymap by [keymap-drawer](https://git
 keymap-drawer/render.sh
 ```
 
-Dependencies: `pip install keymap-drawer "tree-sitter<0.25" "tree-sitter-devicetree<0.15"` and `brew install librsvg`. Style lives in [`keymap-drawer/config.yaml`](keymap-drawer/config.yaml). The ⌃⌥⌘K key is intended to open this image via a host-side binding (Raycast / macOS Shortcuts).
+Dependencies: `pip install keymap-drawer "tree-sitter<0.25" "tree-sitter-devicetree<0.15"` and `brew install librsvg`. Style lives in [`keymap-drawer/config.yaml`](keymap-drawer/config.yaml). The ⌃⌥⌘K key opens this image through a macOS Quick Action (`~/Library/Services/Show Keymap Cheatsheet.workflow`) with ⌃⌥⌘K assigned in System Settings → Keyboard → Keyboard Shortcuts → Services.
+
+## Troubleshooting
+
+### Shifted symbols, F-keys, and media keys "dead" on macOS → check Slow Keys
+
+Case study (2026-07). Every shifted symbol (`!`, `@`, `"`, …), F1–F10, and the media
+keys produced nothing, while holding physical Shift + the base key worked fine. The
+keymap and firmware were verified correct.
+
+Ruled out first: Karabiner-Elements and BetterTouchTool (not installed), `hidutil`
+remappings (returned `(null)`), per-device modifier remaps in Settings → Keyboard,
+and the input source (US, correct).
+
+**Root cause: System Settings → Accessibility → Keyboard → Slow Keys was enabled.**
+Slow Keys requires every key to be held for a minimum time before it registers. ZMK
+sends shifted symbols as one instantaneous HID report (Shift+1 arrives and releases
+together), so macOS discarded them as "too brief". Holding physical Shift passed the
+filter precisely because it is a long press. Consumer-page media keys and quick
+F-key taps fell to the same filter.
+
+**Fix: turn Slow Keys off.** No keymap changes, no reflash, no firmware involvement.
+
+If keys ever "die" suddenly again, check that Accessibility panel first — it can get
+enabled by accident through accessibility keyboard shortcuts.
+
+### Split halves not talking / whole half dead
+
+See [Settings reset](#settings-reset-fixes-pairing-issues--dead-halves).
 
 ## Project structure
 
