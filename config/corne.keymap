@@ -2,149 +2,84 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ *
+ * Corne (crkbd) 42-key layout for nice_nano_v2.
+ * macOS bindings: LGUI = Command, RALT = Option.
  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 / {
-    /*
-     * Professional Programmer Keymap
-     * Designed for fluidity and efficiency.
-     * US English Layout.
-     */
-
-    behaviors {
-        /*
-         * TD0: Tap Dance for Shift/Caps Lock
-         * Tap once for Shift, twice for Caps Lock (optional, but nice)
-         * Actually, let's keep it simple and clean as requested.
-         * Using Mod-Tap for Shift on Z and / to keep outer columns clean.
-         */
-        
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        /*
-         * Layer Tap behavior to be more fluid
-         */
-        lt_hw: layer_tap_hardware {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-        /*
-         * Combo: JK -> ESC
-         * Essential for Vim users and programmers to exit modes quickly without reaching.
-         */
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <19 20>; // J + K (QWERTY positions)
-            bindings = <&kp ESC>;
-        };
-        
-        /*
-         * Combo: DF -> TAB
-         * Quick tab access from left hand
-         */
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <14 15>; // D + F
-            bindings = <&kp TAB>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         /*
-         * DEFAULT LAYER (0)
-         * standard QWERTY
-         * -----------------------------------------------------------------------------------------
-         * |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-         * | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-         * | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-         *                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-         * 
-         * Modifications for 'Professional' feel:
-         * - Outer columns used for Modifiers to maximize dedicated key usage.
-         * - Thumb clusters optimized for Layer access.
+         * BASE (0)
+         * ,-----------------------------------------.   ,-----------------------------------------.
+         * | TAB  |  Q   |  W   |  E   |  R   |  T   |   |  Y   |  U   |  I   |  O   |  P   | ESC  |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * | CTRL |  A   |  S   |  D   |  F   |  G   |   |  H   |  J   |  K   |  L   |  ;   |  "   |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * | SHFT |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   | / ?  | ALT  |
+         * `--------------------+------+------+------|   |------+------+------+--------------------'
+         *                      | CMD  | LWR  | ENT  |   | SPC  | BSPC | RSE  |
+         *                      `--------------------'   `--------------------'
          */
         default_layer {
+            display-name = "Base";
             bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+&kp TAB    &kp Q  &kp W  &kp E     &kp R     &kp T      &kp Y      &kp U     &kp I      &kp O    &kp P     &kp ESC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F     &kp G      &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp DQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V     &kp B      &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RALT
+                         &kp LGUI  &mo 1     &kp RET    &kp SPACE  &kp BSPC  &mo 2
             >;
         };
 
         /*
-         * LOWER LAYER (1) - Symbols & Numbers
-         * Optimized for coding symbols.
-         * -----------------------------------------------------------------------------------------
-         * |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |
-         * | TRANS|  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  |   |
-         * | TRANS|     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-         *                    | GUI |     | SPC |   | ENT | ADJ | ALT |
+         * LOWER (1) — symbols on top, numbers on home row
+         * ,-----------------------------------------.   ,-----------------------------------------.
+         * | TAB  |  !   |  @   |  #   |  $   |  %   |   |  ^   |  &   |  *   |  (   |  )   |  \   |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * | CTRL |  1   |  2   |  3   |  4   |  5   |   |  -   |  =   |  `   |  [   |  ]   |  |   |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * | SHFT |  6   |  7   |  8   |  9   |  0   |   |  _   |  +   |  ~   |  {   |  }   | ALT  |
+         * `--------------------+------+------+------|   |------+------+------+--------------------'
+         *                      | CMD  |      | ENT  |   | SPC  | BSPC |      |
+         *                      `--------------------'   `--------------------'
          */
         lower_layer {
+            display-name = "Lower";
             bindings = <
-   &kp ESC   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5     &kp N6    &kp N7    &kp N8    &kp N9    &kp N0   &kp DEL
-   &trans    &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT  &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR &kp PIPE
-   &trans    &trans   &trans   &trans   &trans   &trans     &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH &kp GRAVE
-                          &kp LGUI &trans &kp SPACE      &kp RET  &mo 3   &kp RALT
+&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
+&kp LCTRL  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT  &kp PIPE
+&kp LSHFT  &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &kp RALT
+                             &kp LGUI  &trans    &kp RET      &kp SPACE  &kp BSPC   &trans
             >;
         };
 
         /*
-         * RAISE LAYER (2) - Navigation & F-Keys
-         * Vim-style navigation on HJKL.
-         * -----------------------------------------------------------------------------------------
-         * |  ESC | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 | DEL  |
-         * | TRANS|     |     |     |     |     |   | LFT | DWN |  UP | RGT |     |      |
-         * | TRANS|     |     |     |     |     |   | HOME| PGDN| PGUP| END |     |      |
-         *                    | GUI | ADJ | SPC |   | ENT |     | ALT |
+         * RAISE (2) — F-keys, media, arrows, Bluetooth, macOS shortcuts
+         * FQIT = Force Quit (Opt+Cmd+Esc), SS4 = Screenshot area (Cmd+Shift+4)
+         * HYPK = Ctrl+Opt+Cmd+K (free hotkey for app launchers/automations)
+         * ,-----------------------------------------.   ,-----------------------------------------.
+         * |      |  F1  |  F2  |  F3  |  F4  |  F5  |   |  F6  |  F7  |  F8  |  F9  | F10  |      |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * |      | PREV | NEXT | VOL- | VOL+ | PLAY |   | LEFT | DOWN |  UP  | RGHT | FQIT | SS4  |
+         * |------+------+------+------+------+------|   |------+------+------+------+------+------|
+         * | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5  |   | HYPK |      |      |      |      |      |
+         * `--------------------+------+------+------|   |------+------+------+--------------------'
+         *                      |      |      |      |   |      |      |      |
+         *                      `--------------------'   `--------------------'
          */
         raise_layer {
+            display-name = "Raise";
             bindings = <
-   &kp ESC   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F6   &kp F7   &kp F8   &kp F9    &kp F10 &kp DEL
-   &trans    &trans &trans &trans &trans &trans   &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans  &trans
-   &trans    &trans &trans &trans &trans &trans   &kp HOME &kp PG_DN &kp PG_UP &kp END &trans  &trans
-                    &kp LGUI &mo 3 &kp SPACE    &kp RET &trans    &kp RALT
-            >;
-        };
-
-        /*
-         * ADJUST LAYER (3) - System
-         * Accessed by holding Lower + Raise (or special toggle)
-         * -----------------------------------------------------------------------------------------
-         * |      | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
-         * |      | BT_C| BT_N|     |     |     |   |     |     |     |     |     |      |
-         * |      | RST | BOOT|     |     |     |   |     |     |     |     |     |      |
-         *                    | GUI |     | SPC |   | ENT |     | ALT |
-         */
-        adjust_layer {
-            bindings = <
-   &trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &trans &trans &trans &trans &trans &trans
-   &trans     &bt BT_CLR   &bt BT_NXT   &trans       &trans       &trans          &trans &trans &trans &trans &trans &trans
-   &trans     &sys_reset   &bootloader  &trans       &trans       &trans          &trans &trans &trans &trans &trans &trans
-                            &kp LGUI     &trans       &kp SPACE       &kp RET  &trans &kp RALT
+&none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6    &kp F7    &kp F8  &kp F9     &kp F10  &none
+&none       &kp C_PREV    &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp LA(LG(ESC))  &kp LG(LS(N4))
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LC(LA(LG(K)))  &none  &none  &none  &none  &none
+                                        &trans        &trans        &trans        &trans    &trans    &trans
             >;
         };
     };
