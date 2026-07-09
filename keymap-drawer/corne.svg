@@ -27,6 +27,9 @@
 <svg id="mdi:close-octagon">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-close-octagon" viewBox="0 0 24 24"><path d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41" /></svg>
 </svg>
+<svg id="mdi:keyboard-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-outline" viewBox="0 0 24 24"><path d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H20V17H4V7M5,8V10H7V8H5M8,8V10H10V8H8M11,8V10H13V8H11M14,8V10H16V8H14M17,8V10H19V8H17M5,11V13H7V11H5M8,11V13H10V11H8M11,11V13H13V11H11M14,11V13H16V11H14M17,11V13H19V11H17M8,14V16H16V14H8Z" /></svg>
+</svg>
 <svg id="mdi:keyboard-return">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-return" viewBox="0 0 24 24"><path d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" /></svg>
 </svg>
@@ -187,15 +190,16 @@ path.combo { stroke: #7f7f7f; }
 svg.keymap { background-color: #1a1b26; }
 rect.key { fill: #24283b; stroke: #414868; stroke-width: 1; }
 text { fill: #c0caf5; }
-text.shifted, text.hold { fill: #9aa5ce; }
+text.shifted, text.hold { fill: #a9b1d6; }
 text.label { font-size: 19px; font-weight: 700; fill: #7aa2f7; }
 text.footer { fill: #565f89; }
 .mod rect { fill: #1f2335; }
-.mod text { fill: #787c99; }
+.mod text { fill: #9aa5ce; }
 .layer rect { fill: #2c3352; stroke: #7aa2f7; }
 .layer text { fill: #7aa2f7; font-weight: 600; }
 .shortcut rect { fill: #2a2540; stroke: #bb9af7; }
 .shortcut text { fill: #bb9af7; }
+.shortcut text.hold { font-size: 9px; }
 .held rect { fill: #3d59a1; stroke: #7aa2f7; }
 .trans rect { fill: #1f2335; }
 .glyph { fill: #c0caf5; }
@@ -689,8 +693,8 @@ text.footer { fill: #565f89; }
 </g>
 <g transform="translate(532, 154)" class="key shortcut keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key shortcut"/>
-<text x="0" y="0" class="key shortcut tap">K</text>
-<text x="0" y="24" class="key shortcut hold">⌃⌥⌘</text>
+<use href="#mdi:keyboard-outline" xlink:href="#mdi:keyboard-outline" x="-7" y="-7" height="14" width="14.0" class="key shortcut tap glyph mdi:keyboard-outline"/>
+<text x="0" y="24" class="key shortcut hold">⌃⌥⌘K</text>
 </g>
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

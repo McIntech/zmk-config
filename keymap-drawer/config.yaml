@@ -70,7 +70,7 @@ parse_config:
     # macOS shortcut keys — accent styled via the "shortcut" type/class
     '&kp LG(LS(N4))': { t: $$mdi:camera$$, h: '⌘⇧4', type: shortcut }
     '&kp LA(LG(ESC))': { t: $$mdi:close-octagon$$, h: Force Quit, type: shortcut }
-    '&kp LC(LA(LG(K)))': { t: K, h: '⌃⌥⌘', type: shortcut }
+    '&kp LC(LA(LG(K)))': { t: $$mdi:keyboard-outline$$, h: '⌃⌥⌘K', type: shortcut }
     # Layer access keys — accent styled via the "layer" type/class
     '&mo 1': { t: Lower, type: layer }
     '&mo 2': { t: Raise, type: layer }
@@ -86,15 +86,16 @@ draw_config:
     svg.keymap { background-color: #1a1b26; }
     rect.key { fill: #24283b; stroke: #414868; stroke-width: 1; }
     text { fill: #c0caf5; }
-    text.shifted, text.hold { fill: #9aa5ce; }
+    text.shifted, text.hold { fill: #a9b1d6; }
     text.label { font-size: 19px; font-weight: 700; fill: #7aa2f7; }
     text.footer { fill: #565f89; }
     .mod rect { fill: #1f2335; }
-    .mod text { fill: #787c99; }
+    .mod text { fill: #9aa5ce; }
     .layer rect { fill: #2c3352; stroke: #7aa2f7; }
     .layer text { fill: #7aa2f7; font-weight: 600; }
     .shortcut rect { fill: #2a2540; stroke: #bb9af7; }
     .shortcut text { fill: #bb9af7; }
+    .shortcut text.hold { font-size: 9px; }
     .held rect { fill: #3d59a1; stroke: #7aa2f7; }
     .trans rect { fill: #1f2335; }
     .glyph { fill: #c0caf5; }
