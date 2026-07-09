@@ -1,0 +1,7 @@
+# keymap-drawer style config — regenerate the SVG with:
+#   keymap parse -z config/corne.keymap > /tmp/corne-parsed.yaml
+#   keymap -c keymap-drawer/config.yaml draw /tmp/corne-parsed.yaml > keymap-drawer/corne.svg
+# Note: keymap-drawer 0.21 needs "tree-sitter<0.25" and "tree-sitter-devicetree<0.15"
+# (newer versions break its parser). PNG: rsvg-convert -w 2400 -o out.png corne.svg
+draw_config:
+  dark_mode: true
