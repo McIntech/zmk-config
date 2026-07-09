@@ -11,6 +11,15 @@ build/
 # Zephyr / west
 .west/
 modules/.west/
+# Leftover local west workspace directories (never commit these)
+/modules/
+/zephyr/
+/zmk/
+
+# Python / editor junk
+__pycache__/
+*.pyc
+*.sw?
 
 # OS
 .DS_Store
