@@ -42,11 +42,7 @@ Persisted settings (split pairing, Bluetooth bonds) survive normal reflashing. I
 
 ## Building
 
-### GitHub Actions (canonical)
-
-Every push runs `.github/workflows/build.yml` and attaches `corne_left`, `corne_right`, and `settings_reset` `.uf2` files as workflow artifacts (matrix in [`build.yaml`](build.yaml)).
-
-### Local build
+This repo intentionally has **no CI** — firmware is built locally and the resulting `.uf2` images are committed to [`firmware/`](firmware/). ([`build.yaml`](build.yaml) stays as the canonical list of build targets.)
 
 Requires: Zephyr SDK, `cmake`, `ninja`, and a **python3.11** venv (Zephyr 3.5 scripts misbehave on newer Pythons).
 
