@@ -6,11 +6,11 @@
 
 ## Layers
 
-| Layer     | Access                          | Contents                                                                                                                     |
-| --------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Base**  | default                         | QWERTY, macOS modifiers (⌘ ⌥ ⌃ ⇧), `' "` quote key, Enter / Space / Backspace on thumbs                                      |
-| **Lower** | hold left-thumb middle (`MO 1`) | Symbols on top row, numbers 1–5 / 6–0 on home and bottom rows, brackets and braces on the right                              |
-| **Raise** | hold right-thumb outer (`MO 2`) | F1–F10, media controls, arrows, Bluetooth profiles, macOS shortcuts (Force Quit ⌥⌘⎋, Screenshot ⌘⇧4, cheatsheet hotkey ⌃⌥⌘K) |
+| Layer     | Access                          | Contents                                                                                                                                                                                                   |
+| --------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Base**  | default                         | QWERTY, macOS modifiers (⌘ ⌃, ⇧ on both bottom corners), `' "` quote key, Enter / Space / Backspace on thumbs                                                                                              |
+| **Lower** | hold left-thumb middle (`MO 1`) | Symbols on top row, numbers 1–5 / 6–0 on home and bottom rows, brackets and braces on the right                                                                                                            |
+| **Raise** | hold right-thumb outer (`MO 2`) | F1–F10, media controls, arrows, Bluetooth profiles, macOS shortcuts (Force Quit ⌥⌘⎋, Screenshot ⌘⇧4, cheatsheet hotkey ⌃⌥⌘K), ⌥ Option on the bottom-right corner (hold Raise + ⌥ + arrows for word jumps) |
 
 The full layout lives in [`config/corne.keymap`](config/corne.keymap) with an ASCII diagram per layer.
 
@@ -39,6 +39,23 @@ Persisted settings (split pairing, Bluetooth bonds) survive normal reflashing. I
 1. Flash `settings_reset-nice_nano_v2.uf2` to **both** halves.
 2. Flash the real left/right firmware back.
 3. Remove the old keyboard entry from macOS Bluetooth settings, power both halves on next to each other (they re-bond automatically), and re-pair from the Mac.
+
+## Battery & charging indicator
+
+Each half shows its **own battery percentage** on the OLED, with a **⚡ lightning
+bolt** in front of it whenever USB power is present — that is the charging signal
+(`CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE` in
+[`config/corne.conf`](config/corne.conf)).
+
+- **⚡ 74%** → plugged in and charging (the percentage climbs over time).
+- **⚡ 100%** → plugged in, battery full. ZMK does not distinguish "charging" from
+  "charge complete" — the bolt only means USB power is present.
+- **74%** (no bolt) → running on battery.
+
+The display blanks after ~30 s idle; **tap any key to wake it** and read the status.
+The nice!nano v2 also has an onboard blue charge LED (on while charging, off when
+full), but on a Corne it sits hidden under the OLED module — that is why no light
+is visible while charging.
 
 ## Building
 

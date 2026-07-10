@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  *
  * Corne (crkbd) 42-key layout for nice_nano_v2.
- * macOS bindings: LGUI = Command, RALT = Option.
+ * macOS bindings: LGUI = Command. Right Shift on the Base bottom-right
+ * corner; Option (RALT) lives on Raise at that same key.
  */
 
 #include <behaviors.dtsi>
@@ -22,7 +23,7 @@
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
          * | CTRL |  A   |  S   |  D   |  F   |  G   |   |  H   |  J   |  K   |  L   |  ;   | ' "  |
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
-         * | SHFT |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   | / ?  | ALT  |
+         * | SHFT |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   | / ?  | SHFT |
          * `--------------------+------+------+------|   |------+------+------+--------------------'
          *                      | CMD  | LWR  | ENT  |   | SPC  | BSPC | RSE  |
          *                      `--------------------'   `--------------------'
@@ -32,7 +33,7 @@
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R     &kp T      &kp Y      &kp U     &kp I      &kp O    &kp P     &kp ESC
 &kp LCTRL  &kp A  &kp S  &kp D     &kp F     &kp G      &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V     &kp B      &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RALT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V     &kp B      &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                          &kp LGUI  &mo 1     &kp RET    &kp SPACE  &kp BSPC  &mo 2
             >;
         };
@@ -44,7 +45,7 @@
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
          * | CTRL |  1   |  2   |  3   |  4   |  5   |   |  -   |  =   |  `   |  [   |  ]   |  |   |
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
-         * | SHFT |  6   |  7   |  8   |  9   |  0   |   |  _   |  +   |  ~   |  {   |  }   | ALT  |
+         * | SHFT |  6   |  7   |  8   |  9   |  0   |   |  _   |  +   |  ~   |  {   |  }   | SHFT |
          * `--------------------+------+------+------|   |------+------+------+--------------------'
          *                      | CMD  |      | ENT  |   | SPC  | BSPC |      |
          *                      `--------------------'   `--------------------'
@@ -54,7 +55,7 @@
             bindings = <
 &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
 &kp LCTRL  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp MINUS  &kp EQUAL  &kp GRAVE  &kp LBKT  &kp RBKT  &kp PIPE
-&kp LSHFT  &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &kp RALT
+&kp LSHFT  &kp N6    &kp N7  &kp N8    &kp N9    &kp N0       &kp UNDER  &kp PLUS   &kp TILDE  &kp LBRC  &kp RBRC  &kp RSHFT
                              &kp LGUI  &trans    &kp RET      &kp SPACE  &kp BSPC   &trans
             >;
         };
@@ -63,12 +64,14 @@
          * RAISE (2) — F-keys, media, arrows, Bluetooth, macOS shortcuts
          * FQIT = Force Quit (Opt+Cmd+Esc), SS4 = Screenshot area (Cmd+Shift+4)
          * HYPK = Ctrl+Opt+Cmd+K (free hotkey for app launchers/automations)
+         * OPT  = Option, same physical key as Base right Shift
+         *        (hold Raise + OPT + arrows for word-by-word jumps)
          * ,-----------------------------------------.   ,-----------------------------------------.
          * |      |  F1  |  F2  |  F3  |  F4  |  F5  |   |  F6  |  F7  |  F8  |  F9  | F10  |      |
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
          * |      | PREV | NEXT | VOL- | VOL+ | PLAY |   | LEFT | DOWN |  UP  | RGHT | FQIT | SS4  |
          * |------+------+------+------+------+------|   |------+------+------+------+------+------|
-         * | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5  |   | HYPK |      |      |      |      |      |
+         * | BTCLR| BT1  | BT2  | BT3  | BT4  | BT5  |   | HYPK |      |      |      |      | OPT  |
          * `--------------------+------+------+------|   |------+------+------+--------------------'
          *                      |      |      |      |   |      |      |      |
          *                      `--------------------'   `--------------------'
@@ -78,7 +81,7 @@
             bindings = <
 &none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6    &kp F7    &kp F8  &kp F9     &kp F10  &none
 &none       &kp C_PREV    &kp C_NEXT    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp LA(LG(ESC))  &kp LG(LS(N4))
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LC(LA(LG(K)))  &none  &none  &none  &none  &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LC(LA(LG(K)))  &none  &none  &none  &none  &kp RALT
                                         &trans        &trans        &trans        &trans    &trans    &trans
             >;
         };

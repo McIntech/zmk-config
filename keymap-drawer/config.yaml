@@ -19,6 +19,7 @@ parse_config:
     # Modifiers — macOS symbols, muted via the "mod" type/class
     LCTRL: { t: '⌃', h: ctrl, type: mod }
     LSHFT: { t: '⇧', h: shift, type: mod }
+    RSHFT: { t: '⇧', h: shift, type: mod }
     LGUI: { t: '⌘', h: cmd, type: mod }
     RALT: { t: '⌥', h: opt, type: mod }
     # Glyphs
